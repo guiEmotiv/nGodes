@@ -1,0 +1,48 @@
+{
+  "areaA":[
+    {
+      "id": "Base",
+      "locX": 200,
+      "locY": 200
+    },
+    {
+      "id": "client A",
+      "locX": 100,
+      "locY": 200
+    },
+    {
+      "id": "client B",
+      "locX": 100,
+      "locY": 100
+    },
+    {
+      "id": "client C",
+      "locX": 200,
+      "locY": 100
+    },
+    {
+      "id": "client D",
+      "locX": 300,
+      "locY": 100
+    },
+    {
+      "id": "client E",
+      "locX": 300,
+      "locY": 200
+    },
+    {
+      "id": "client F",
+      "locX": 300,
+      "locY": 300
+    },
+    {
+      "id": "client G",
+      "locX": 200,
+      "locY": 300
+    },
+    {
+      "id": "client H",
+      "locX": 100,
+      "locY": 300
+    }]
+}
