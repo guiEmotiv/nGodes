@@ -10,7 +10,7 @@ var aprAlarmTime 			[300]float64
 var aprAlarmSite			[300]int
 var aprInterArrival 		[300]float64
 var aprUpperBound			[300]float64
-var aprShiftLength			float64 		= 100.0
+var aprTimeShift			float64 		= 100.0
 var aprEmerDuration 		float64			= 7.5
 var minimumDistanceAlarm 	float64			= 2.5
 var aprMeanRate 			float64			= 2.0
