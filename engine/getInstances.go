@@ -7,15 +7,11 @@ import (
 
 type Client struct {
 	AreaA []struct {
-		ID   string 	`json:"id"`
-		LocX float64    `json:"locX"`
-		LocY float64    `json:"locY"`
+		ID   		string		`json:"id"`
+		LocX		float64		`json:"locX"`
+		LocY 		float64   	`json:"locY"`
+		Frequency	float64		`json:"frequency"`
 	} `json:"areaA"`
-	AreaB []struct {
-		ID   string 	`json:"id"`
-		LocX float64    `json:"locX"`
-		LocY float64    `json:"locY"`
-	} `json:"areaB"`
 }
 func GetInstances(s string) Client {
 	var newJson Client

@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func GetEmergency(a Client) {
+func GetEmergency(a Client) (m NewFormatTasks){
 
 	maxSites = len(a.AreaA)
 	maxOrdTasks = len(a.AreaA)
@@ -21,7 +21,7 @@ func GetEmergency(a Client) {
 		//fmt.Println(u)
 		if aprAlarmTime[i] < aprTimeShift {
 			for j := 1; j < maxSites ; j++ {
-				aprUpperBound[j] = (1.0/(float64(maxSites))) * (float64(j))
+				aprUpperBound[j] = (1.0/(float64(maxSites-1))) * (float64(j))
 				//fmt.Println("upp",aprUpperBound[j])
 				if u < aprUpperBound[j] {
 					if u >= aprUpperBound[j-1]{
@@ -31,12 +31,27 @@ func GetEmergency(a Client) {
 				}
 			}
 			newOrder := maxOrdTasks + i
-			newAlarm := aprAlarmTime[i]
 			newSite := aprAlarmSite[i]
-			fmt.Printf("#tareas max: %d -  Tarea Emer # %d - tiempo de alarma %g - t duracion %g - nivel importance %g - Site # %d \n",
-				maxSites, newOrder,newAlarm,aprEmerDuration,aprEmerImportance,newSite)
+			newAlarm := aprAlarmTime[i]
+			newEarly := aprAlarmTime[i]
+			newLast := aprAlarmTime[i] + aprEmerDuration
+
+			m = NewFormatTasks{
+				newOrder,
+				newSite,
+				newAlarm,
+				newEarly,
+				newLast,
+				aprEmerDuration,
+				aprEmerImportance,
+				0,
+			}
+			fmt.Print("hola soy m ", m )
+			fmt.Printf("#RegularTasks: %d | newIdTasks: %d | newIdSite: %d | releasing: %g | duration: %g | importance: %g \n",
+				maxSites, newOrder,newSite, newAlarm,aprEmerDuration,aprEmerImportance)
 		}
 	}
+	return
 }
 
 func GetRandom() float64 {
