@@ -6,10 +6,10 @@ var aprCoorX 				float64
 var aprCoorY 				float64
 var maxSites				int
 var maxOrdTasks 			int
-var aprAlarmTime 			[300]float64
-var aprAlarmSite			[300]int
-var aprInterArrival 		[300]float64
-var aprUpperBound			[300]float64
+var aprAlarmTime 			[100]float64
+var aprAlarmSite			[100]int
+var aprInterArrival 		[100]float64
+var aprUpperBound			[100]float64
 var aprTimeShift			float64 		= 100.0
 var aprEmerDuration 		float64			= 7.5
 var minimumDistanceAlarm 	float64			= 2.5
@@ -18,7 +18,7 @@ var aprEmerImportance		float64			= 100.0
  
 
 /* MAKE TASKS AND EMERGENCY*/
-
+//
 type NewFormatTasks struct {
 	NewIdTask		int
 	NewIdSite		int
@@ -30,5 +30,6 @@ type NewFormatTasks struct {
 	NewTaskType		int
 }
 
+var Store = make(map[string]NewFormatTasks)
 
 
