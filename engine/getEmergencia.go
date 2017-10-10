@@ -8,12 +8,30 @@ import (
 	"fmt"
 	"encoding/json"
 	"io/ioutil"
+	"os"
 )
 
-func GetEmergency(a Client) (total []NewFormatTasks){
-
-	maxSites = len(a.AreaA)
-	maxOrdTasks = len(a.AreaA)
+func GetTotalEvent(a OrdinaryTask) (eventsTotal []NewFormatTasks){
+	maxSites = len(a)
+	maxOrdTasks = len(a) - 1
+	for w := 0; w < maxSites; w++ {
+		StoreTasks["Emergency"] = NewFormatTasks{
+			a[w].NewIDTask,
+			a[w].NewIDSite,
+			a[w].NewReleasing,
+			a[w].NewEarliest,
+			a[w].NewLatest,
+			a[w].NewDuration,
+			a[w].NewImportance,
+			a[w].NewTaskType,
+			a[w].LocX,
+			a[w].LocY,
+			a[w].Frequency,
+		}
+		for _, v := range StoreTasks {
+			eventsTotal = append(eventsTotal, v)
+		}
+	}
 	i := 0
 	for aprAlarmTime[i] <= (aprTimeShift - aprEmerDuration - minimumDistanceAlarm){
 		i++
@@ -23,7 +41,7 @@ func GetEmergency(a Client) (total []NewFormatTasks){
 		u := GetRandom()
 		//fmt.Println(u)
 		if aprAlarmTime[i] < aprTimeShift {
-			for j := 1; j <= maxSites ; j++ {
+			for j := 1; j < maxSites ; j++ {
 				aprUpperBound[j] = (1.0/(float64(maxSites-1))) * (float64(j))
 				//fmt.Println("upp",aprUpperBound[j])
 				if u < aprUpperBound[j] {
@@ -33,28 +51,29 @@ func GetEmergency(a Client) (total []NewFormatTasks){
 					}
 				}
 			}
-
-			Store["Emergency"] = NewFormatTasks{
+			StoreTasks["Emergency"] = NewFormatTasks{
 				maxOrdTasks + i,
 				aprAlarmSite[i],
 				aprAlarmTime[i],
 				aprAlarmTime[i],
 				aprAlarmTime[i] + aprEmerDuration,
-					aprEmerDuration,
-					aprEmerImportance,
-					0,
+				aprEmerDuration,
+				aprEmerImportance,
+				0,
+				a[aprAlarmSite[i]].LocX,
+				a[aprAlarmSite[i]].LocY,
+				0,
 			}
-			for _, v := range Store {
-				total = append(total, v)
+
+			for _, v := range StoreTasks {
+				eventsTotal = append(eventsTotal, v)
+				fmt.Println(StoreTasks)
 			}
-			fmt.Println(Store)
-			//fmt.Println(s)
+			//fmt.Println(StoreTasks)
 			//fmt.Printf("#RegularTasks: %d | newIdTasks: %d | newIdSite: %d | releasing: %g | duration: %g | importance: %g \n",
 			//	maxSites, newOrder,newSite, newAlarm,aprEmerDuration,aprEmerImportance)
-
 		}
 	}
-
 	return
 }
 
@@ -65,11 +84,18 @@ func GetRandom() float64 {
 }
 
 func GetJson(s []NewFormatTasks) {
-	output, _ := json.MarshalIndent(s, "","\t")
-	error := ioutil.WriteFile("post.json", output, 0777)
-	if error != nil {
-		fmt.Println("error json")
-
+	jsonFile, _ := json.MarshalIndent(s, "","\t")
+	err := ioutil.WriteFile("eventsTotal.json", jsonFile, 0777)
+	if err != nil {
+		fmt.Println("error when create JSON file")
 	}
 }
 
+func GetOrdinaryTask(s string) OrdinaryTask {
+	var newJson OrdinaryTask
+	jsonFile, _ := os.Open(s)
+	defer jsonFile.Close()
+	jsonParser := json.NewDecoder(jsonFile)
+	jsonParser.Decode(&newJson)
+	return newJson
+}
