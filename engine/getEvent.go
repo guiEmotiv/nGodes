@@ -85,7 +85,7 @@ func GetRandom() float64 {
 
 func GetJson(s []NewFormatTasks) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
-	err := ioutil.WriteFile("eventsTotal.json", jsonFile, 0777)
+	err := ioutil.WriteFile("./json/eventsTotal.json", jsonFile, 0777)
 	if err != nil {
 		fmt.Println("error when create JSON file")
 	}
