@@ -1,40 +1,50 @@
 package main
 
 import (
-	//"gopkg.in/fogleman/gg.v1"
+	"gopkg.in/fogleman/gg.v1"
 	g "github.com/guiemotiv/nGodes/engine"
-	"fmt"
-
+	"strconv"
 )
-
 
 func main(){
 
 	instances := g.GetOrdinaryTask("./json/ordinarytask.json")
 	// make emergency tasks
 	a := g.GetTotalEvent(instances)
-	fmt.Println(a)
+	//fmt.Println(a)
 	g.GetJson(a)
+	q := g.GetNews(a)
+	//g.GetNews(a)
 
-	//g.ConsiderTemptativePlans(a, 12.3,2)
+	d := gg.NewContext(400,400)
+	for i := 0;i<len(a); i++ {
+		d.DrawString(strconv.Itoa(a[i].NewIdSite),a[i].LocX*20+5,a[i].LocY*20+5)
+		//d.DrawString(strconv.FormatFloat(a[i].LocX, 'f', 6, 64),a[i].LocX*20-20,a[i].LocY*20-20)
+		d.DrawCircle(a[i].LocX*20,a[i].LocY*20,4)
+		d.SetRGB(255, 255, 0)
+		d.Stroke()
+	}
 
-	w := make(map[int]int)
-
-	w[0] = 1
-	fmt.Println(w)
-	w[0] = 2
-	fmt.Println(w)
-	delete(w,0)
-	w[10] = 2
-	w[11] = 3
-	f := w[10]
-	fmt.Println(w)
-	fmt.Println(f)
-
-
-
+	for i := 0; i < len(q)-1; i++ {
+		d.SetRGB(100, 10, 10)
+		d.Fill()
+		d.DrawString(strconv.FormatFloat(q[0].StepPos.LocX, 'f', 6, 64),q[0].StepPos.LocX*20,q[0].StepPos.LocY*20)
+		if q[i].Status == true  {
+			d.SetRGB(100, 100, 1)
+			d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,3)
+			d.Fill()
+		}else {
+			d.SetRGB(19, 100, 10)
+			d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,1)
+			d.Fill()
+		}
 
 
-	//	s := TimeStepPlan(range(1:LastTaskId))
+	}
+
+	d.SavePNG("./img/newpos.png")
 
 }
+
+
+

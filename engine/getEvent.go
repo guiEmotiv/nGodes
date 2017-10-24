@@ -67,7 +67,7 @@ func GetTotalEvent(a OrdinaryTask) (eventsTotal []NewFormatTasks){
 
 			for _, v := range StoreTasks {
 				eventsTotal = append(eventsTotal, v)
-				fmt.Println(StoreTasks)
+				fmt.Println("StoreTask: ",StoreTasks)
 			}
 			//fmt.Println(StoreTasks)
 			//fmt.Printf("#RegularTasks: %d | newIdTasks: %d | newIdSite: %d | releasing: %g | duration: %g | importance: %g \n",
@@ -93,6 +93,15 @@ func GetJson(s []NewFormatTasks) {
 
 func GetOrdinaryTask(s string) OrdinaryTask {
 	var newJson OrdinaryTask
+	jsonFile, _ := os.Open(s)
+	defer jsonFile.Close()
+	jsonParser := json.NewDecoder(jsonFile)
+	jsonParser.Decode(&newJson)
+	return newJson
+}
+
+func GetTotalEvents(s string) NewFormatTasks {
+	var newJson NewFormatTasks
 	jsonFile, _ := os.Open(s)
 	defer jsonFile.Close()
 	jsonParser := json.NewDecoder(jsonFile)
