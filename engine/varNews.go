@@ -14,11 +14,14 @@ type StepPos struct {
 	LocX		float64
 	LocY		float64
 	Dist 		float64
+	Duration    float64
 }
+
 var lastPosOrdX float64
 var lastPosOrdY float64
 var StorePos = make(map[string]StepPos)
 var StorePlan = make(map[string]GetPlan)
+//var storeIdOrdnew = make([]int,len(sortByWe))
 
 /* SORT EVERY TASKS */
 
@@ -45,7 +48,7 @@ var idPlanTaskOrd []int
 var idPlanTaskEmer []int
 
 var aPosX, aPosY, nPosX, nPosY float64
-var posActX, posActY, nextPostX, nextPostY float64
+var updateX, updateY *float64
 var virtualTimeShift float64 = 100.0
 var elapsedTime float64
 var	virtualStepTime float64
@@ -55,3 +58,4 @@ var stepDist float64
 var baseReturn 	bool
 var LastExecTime float64
 var ConsideredStartExecTime float64
+var deleteId int

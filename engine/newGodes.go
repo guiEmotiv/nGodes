@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"math"
 	"sort"
+	"time"
 )
 
 func GetNews(v []NewFormatTasks) (test []GetPlan) {
@@ -34,12 +35,20 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 
 		if StoreByWeight[0].NewTaskType == 1 {
 			/* init values */
-			stepTime = elapsedTime
+
+ 			stepTime = elapsedTime
 			virtualStartTime = StoreByWeight[0].NewEarliest
 			aPosX = StoreByWeight[0].LocX
 			aPosY = StoreByWeight[0].LocY
+
+			updateX = &aPosX
+			updateY = &aPosY
+
+			fmt.Println("puntero inicial : ",*updateX, *updateY)
+			feasibleIDs()
 			idtaskrelease := 0
 			delete(StoreByWeight,idtaskrelease)
+			// append last values
 			StorePlan["fa"] = GetPlan{
 				0,
 				0,
@@ -50,6 +59,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 					1,
 					aPosX,
 					aPosY,
+					0,
 					0,
 				},
 			}
@@ -80,6 +90,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 								q[i].LocX,
 								q[i].LocY,
 								q[i].Dist,
+								q[i].Duration,
 							},
 						}
 						for _, v := range StorePlan {
@@ -87,14 +98,21 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 						}
 
 						stepTime = q[i].TimeElapsed
-						lastPosOrdX = q[i].LocX
-						lastPosOrdY = q[i].LocX
+						updateX = &q[i].LocX
+						updateY = &q[i].LocY
 						fmt.Println(StorePlan)
-					}
-					//fmt.Println(stepTime)
-					//fmt.Println(lastPosOrdX)
 
-					fmt.Println("cumpli a: ",a)
+						if q[i].LocX == StoreByWeight[a].LocX && q[i].LocY == StoreByWeight[a].LocY && q[i].Duration == StoreByWeight[a].NewDuration {
+							deleteId = a // note delete may change
+						}
+					}
+					delete(StoreByWeight,deleteId)
+					feasibleIDs()
+					//fmt.Println("restantes: ",storeIdOrdNew)
+					fmt.Println("delete:  ", deleteId)
+					fmt.Println("saliendo: ",StoreByWeight[deleteId])
+					fmt.Println("puntero final : ",*updateX, *updateY)
+					fmt.Println("tarea cumplida id: ",a)
 				}else {
 					fmt.Println("noob")
 				}
@@ -105,33 +123,30 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 			virtualStartTime = StoreByWeight[0].NewEarliest
 			fmt.Println("E task: ", virtualStartTime, "run bictch...",StoreByWeight[0])
 		}
-
-		//newaPosX, newaPosY, newnPosX, newnPosY = &aPosX, &aPosY, &nPosX, &nPosY
-		//for i := 0; i< len(idPlanTaskOrd)-1; i++ {
-		//
-		//	//aPosX, aPosY, nPosX, nPosY = sortByWe[idPlanTaskOrd[i]].LocX, sortByWe[idPlanTaskOrd[i]].LocY, sortByWe[idPlanTaskOrd[i+1]].LocX, sortByWe[idPlanTaskOrd[i+1]].LocY
-		//	d := distance(aPosX, aPosY, nPosX, nPosY)
-		//	fmt.Println("d: ",d)
-		//	arrTime = sortByWe[1].NewEarliest
-		//	fmt.Println("arr", arrTime)
-		//	dur := sortByWe[1].NewDuration
-		//	fmt.Println("dur", dur)
-		//	fmt.Println(i)
-		//	w := 9
-		//	if i == w {
-		//		break
-		//	}
-		//	//fmt.Println(*newaPosX)
-		//}
-		//time.Sleep(time.Microsecond*2000000)
-		elapsedTime++
-		//fmt.Println(elapsedTime)
-
+		time.Sleep(time.Microsecond*2000000)
+		//elapsedTime++
+		elapsedTime = stepTime
+		fmt.Println(elapsedTime)
 	}
-
 	return
 }
-
+func feasibleIDs()  {
+	var storeIdOrdNew = make([]int,len(sortByWe))
+	var bestWeightNew [1]int
+	for k, _ := range StoreByWeight {
+		storeIdOrdNew[k] = k
+	}
+	for i := 0; i < len(StoreByWeight); i++ {
+		if storeIdOrdNew[i] == 0 {
+			continue
+		}else {
+			bestWeightNew[0] = storeIdOrdNew[i]
+			break
+		}
+	}
+	fmt.Println("se acabo",storeIdOrdNew)
+	return
+}
 func nextPosition(x1, y1, et float64) (bestPos int) {
 	//delete(StoreByWeight,1)
 	// ORDINARY TASK 4 NEXT POINTS
@@ -181,8 +196,8 @@ func runOrdinaryTask(x1, y1, x2, y2 float64, et float64, a int) (newPos []StepPo
 	arrDist := distance(x1,y1,x2,y2)
 	fmt.Println("wtf: ", x1, y1)
 	fmt.Println("tiempo de llegada: ", arrDist)
-	for i := 0.0; i <= arrDist; i++ {
-		arrDist = distance(x1,y1,x2,y2)
+	for i := 0.0; i < arrDist; i++ {
+		arrDist := distance(x1,y1,x2,y2)
 		newX1 := x1
 		newY1 := y1
 		newX2 := newX1 + (x2 - x1) / arrDist
@@ -199,6 +214,7 @@ func runOrdinaryTask(x1, y1, x2, y2 float64, et float64, a int) (newPos []StepPo
 			newX2,
 			newY2,
 			stepDist,
+			i,
 		}
 		//fmt.Println(StorePos)
 		for _, v := range StorePos {
@@ -212,7 +228,7 @@ func runOrdinaryTask(x1, y1, x2, y2 float64, et float64, a int) (newPos []StepPo
 	lastElapsedTime := StorePos["travelOrd"].TimeElapsed
 	//fmt.Println(lastPostStoreX,lastPostStoreY)
 	waitTime := StoreByWeight[a].NewDuration
-	for i := 1.0; i < waitTime; i++ {
+	for i := 1.0; i <= waitTime; i++ {
 		//fmt.Println("wait",i)
 		lastElapsedTime++
 		StorePos["travelOrd"] = StepPos{
@@ -222,6 +238,7 @@ func runOrdinaryTask(x1, y1, x2, y2 float64, et float64, a int) (newPos []StepPo
 			lastPostStoreX,
 			lastPostStoreY,
 			0,
+			i,
 		}
 		//fmt.Println(StorePos)
 		for _, v := range StorePos {

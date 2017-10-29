@@ -31,7 +31,7 @@ func main(){
 	}
 
 	for i := 0; i < len(q)-1; i++ {
-		d.SetRGB(100, 10, 10)
+		d.SetRGB(10, 100, 100)
 		d.Fill()
 		d.DrawString(strconv.FormatFloat(q[0].StepPos.LocX, 'f', 6, 64),q[0].StepPos.LocX*20,q[0].StepPos.LocY*20)
 		//if q[i].StepPos.IdTask == 1  {
