@@ -170,7 +170,6 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	}
 	fmt.Println("Lista de IDs tareas Ord por realizar",storeIdOrd)
 
-
 	// CRITERIA
 	xBase := sortByWe[0].LocX
 	yBase := sortByWe[0].LocY
@@ -272,7 +271,4 @@ func GetJsonDT(s []GetPlan) {
 	if err != nil {
 		fmt.Println("error when create JSON file")
 	}
-}
-func Round(x, unit float64) float64 {
-	return float64(int64(x/unit+0.5)) * unit
 }
