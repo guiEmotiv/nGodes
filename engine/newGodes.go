@@ -10,87 +10,223 @@ import (
 
 func GetNews(v []NewFormatTasks) (test []GetPlan) {
 
-	// SORT by Earliest
-	sortByEar := v[:]
-	sort.Sort(byEarliest(sortByEar))
-	fmt.Println("sort plan by earliest: ",sortByEar)
-	//EveryTime := make([]float64,len(sortByEar))
+	// SORT by Earliest (slice struct type)
+	sortByWe = v[:]
+	sort.Sort(sortByWeight(sortByWe))
 
-	// Make slice Ordinary && Emergency
+	// convert SORT by earliest to map
+	//fmt.Println(sortByWe[13])
+	for k, v := range sortByWe {
+		StoreByWeight[k] = v
+	}
+	//fmt.Println(StoreByWeight[12])
+	// fmt.Println(sortByWe[3])
+	// IDs task ordinary && task Emergency
+	for k, v := range sortByWe {
+		//fmt.Println(" ",sortByWe[k].NewEarliest)
+		if v.NewTaskType == 1 { idPlanTaskOrd = append(idPlanTaskOrd,k) }else { idPlanTaskEmer = append(idPlanTaskEmer,k)}
+	}
+	fmt.Println("idPlanTaskOrd && idPlanTaskEmer: ",idPlanTaskOrd, idPlanTaskEmer)
+
 	// ordinary tasks assume clock 100 step 1 && guard 1 && 3 state E1 E2 E3
+	elapsedTime = 0
+	for virtualTimeShift > elapsedTime {
 
-	for i := 0; i < len(v) - 1; i++ {
-		vTT = 100
-		vTS = sortByEar[0].LocX
+		if StoreByWeight[0].NewTaskType == 1 {
+			/* init values */
+			stepTime = elapsedTime
+			virtualStartTime = StoreByWeight[0].NewEarliest
+			aPosX = StoreByWeight[0].LocX
+			aPosY = StoreByWeight[0].LocY
+			idtaskrelease := 0
+			delete(StoreByWeight,idtaskrelease)
+			StorePlan["fa"] = GetPlan{
+				0,
+				0,
+				1,
+				StepPos{
+					0,
+					0,
+					1,
+					aPosX,
+					aPosY,
+					0,
+				},
+			}
+			for _, v := range StorePlan {
+				test = append(test, v)
+			}
 
-		if vTT > vTS {
+			/* Validation tasks elapsed */
+			if StoreByWeight != nil {
+				//fmt.Println("existe IDs en plan total",StoreByWeight)
+				// func evaluate nex ord task (time elapsed && score)
+				a := nextPosition(aPosX, aPosY, stepTime)
+				if StoreByWeight[a].NewTaskType == 1 {
+					nPosX = StoreByWeight[a].LocX
+					nPosY = StoreByWeight[a].LocY
+					fmt.Println("next post",a, nPosX,nPosY)
+					q := runOrdinaryTask(aPosX,aPosY,nPosX,nPosY,stepTime, a)
+					for i := 0; i < len(q); i++ {
+						//fmt.Println(q[i].LocX)
+						StorePlan["fa"] = GetPlan{
+							q[i].TimeElapsed,
+							q[i].TimeElapsed,
+							1,
+							StepPos{
+								q[i].TimeElapsed,
+								q[i].IdTask,
+								q[i].TypeStatus,
+								q[i].LocX,
+								q[i].LocY,
+								q[i].Dist,
+							},
+						}
+						for _, v := range StorePlan {
+							test = append(test, v)
+						}
 
+						stepTime = q[i].TimeElapsed
+						lastPosOrdX = q[i].LocX
+						lastPosOrdY = q[i].LocX
+						fmt.Println(StorePlan)
+					}
+					//fmt.Println(stepTime)
+					//fmt.Println(lastPosOrdX)
 
-
+					fmt.Println("cumpli a: ",a)
+				}else {
+					fmt.Println("noob")
+				}
+			}else {
+				fmt.Println("ar u stupid?..")
+			}
+		}else if StoreByWeight[0].NewTaskType == 0 && StoreByWeight[0].NewImportance != 0{
+			virtualStartTime = StoreByWeight[0].NewEarliest
+			fmt.Println("E task: ", virtualStartTime, "run bictch...",StoreByWeight[0])
 		}
 
+		//newaPosX, newaPosY, newnPosX, newnPosY = &aPosX, &aPosY, &nPosX, &nPosY
+		//for i := 0; i< len(idPlanTaskOrd)-1; i++ {
+		//
+		//	//aPosX, aPosY, nPosX, nPosY = sortByWe[idPlanTaskOrd[i]].LocX, sortByWe[idPlanTaskOrd[i]].LocY, sortByWe[idPlanTaskOrd[i+1]].LocX, sortByWe[idPlanTaskOrd[i+1]].LocY
+		//	d := distance(aPosX, aPosY, nPosX, nPosY)
+		//	fmt.Println("d: ",d)
+		//	arrTime = sortByWe[1].NewEarliest
+		//	fmt.Println("arr", arrTime)
+		//	dur := sortByWe[1].NewDuration
+		//	fmt.Println("dur", dur)
+		//	fmt.Println(i)
+		//	w := 9
+		//	if i == w {
+		//		break
+		//	}
+		//	//fmt.Println(*newaPosX)
+		//}
+		//time.Sleep(time.Microsecond*2000000)
+		elapsedTime++
+		//fmt.Println(elapsedTime)
 
+	}
 
+	return
+}
 
+func nextPosition(x1, y1, et float64) (bestPos int) {
+	//delete(StoreByWeight,1)
+	// ORDINARY TASK 4 NEXT POINTS
+	for i := 0; i < len(idPlanTaskEmer); i++ {
+		delete(StoreByWeight,idPlanTaskEmer[i])
+	}
+	// SLICE Store By Weight IDs
+	//fmt.Println("evaluar si exite", StoreByWeight[2])
+	var storeIdOrd = make([]int,len(sortByWe))
+	var bestWeight [1]int
 
-		//startVirtualTime := sortByEar[0].NewEarliest
-		posInicialGlobalX := sortByEar[i].LocX
-		posInicialGlobalY := sortByEar[i].LocY
-		posFinalGlobalX := sortByEar[i+1].LocX
-		posFinalGlobalY := sortByEar[i+1].LocY
-		dist := distance(posInicialGlobalX,posInicialGlobalY,posFinalGlobalX,posFinalGlobalY)
-
-		for k := 0.0; k < dist -1; k++ {
-			dist := distance(posInicialGlobalX,posInicialGlobalY,posFinalGlobalX,posFinalGlobalY)
-			newX1 = posInicialGlobalX
-			newY1 = posInicialGlobalY
-			newX2 = newX1 + (posFinalGlobalX - posInicialGlobalX) / dist
-			newY2 = newY1 + (posFinalGlobalY - posInicialGlobalY) / dist
-			posInicialGlobalX = newX2
-			posInicialGlobalY = newY2
-			distq = distance(newX1,newY1,newX2,newY2)
-			//fmt.Println(distq)
-			stepTime = stepTime + 1.0
-			vTT = vTT - 1.0
-			//fmt.Println(virtualTimeTotal)
-
-
-			for _, v := range StorePlan { test = append(test, v) }
-			StorePlan["fe"] = GetPlan{stepTime,vTT,1,StepPos{newX2,newY2,distq},re}
+	for k, _ := range StoreByWeight {
+		storeIdOrd[k] = k
+	}
+	for i := 0; i < len(StoreByWeight); i++ {
+		if storeIdOrd[i] == 0 {
+			continue
+		}else {
+			bestWeight[0] = storeIdOrd[i]
+			break
 		}
+	}
+	fmt.Println("Lista de IDs tareas Ord por realizar",storeIdOrd)
+	fmt.Println("bestWeight", bestWeight)
 
-		fmt.Println(StorePlan)
+	// CRITERIA
+	xBase := StoreByWeight[0].LocX
+	yBase := StoreByWeight[0].LocY
+	xConsidered := StoreByWeight[bestWeight[0]].LocY
+	yConsidered := StoreByWeight[bestWeight[0]].LocY
+	distBase := distance(xConsidered,yConsidered,xBase,yBase)
+	if et + distBase + StoreByWeight[bestWeight[0]].NewDuration < virtualTimeShift {
+		baseReturn = false
+		bestPos = bestWeight[0]
+	}else {
+		bestPos = 0
+		baseReturn = true
 	}
 	return
 }
 
-func getPoints(x1, y1, x2, y2 float64) (newx2, newy2, q float64) {
+func runOrdinaryTask(x1, y1, x2, y2 float64, et float64, a int) (newPos []StepPos) {
+	idTask := 1
+	typeOperationOrd := 2
+	typeTravelOrd := 1
 
-	var newx1, newy1 float64
-	d := distance(x1,y1,x2,y2)
-	//var q float64
-
-	for i := 0.0; i < d; i++ {
-		d := distance(x1,y1,x2,y2)
-		lenx := (x2 - x1) / d
-		leny := (y2 - y1) / d
-		newx1 = x1
-		newy1 = y1
-		newx2 = newx1 + lenx
-		newy2 = newy1 + leny
-		x1 = newx2
-		y1 = newy2
-
-		q = distance(newx1,newy1,newx2,newy2)
-
-
-
-		//StorePosortByEar["fe"] = StepPos{newx2,newy2, q}
-		//for _, v := range StorePos {
-		//	s = append(s, v)
-		//}
+	arrDist := distance(x1,y1,x2,y2)
+	fmt.Println("wtf: ", x1, y1)
+	fmt.Println("tiempo de llegada: ", arrDist)
+	for i := 0.0; i <= arrDist; i++ {
+		arrDist = distance(x1,y1,x2,y2)
+		newX1 := x1
+		newY1 := y1
+		newX2 := newX1 + (x2 - x1) / arrDist
+		newY2 := newY1 + (y2 - y1) / arrDist
+		x1 = newX2
+		y1 = newY2
+		stepDist = distance(newX1,newY1,newX2,newY2)
+		idOrd := stepDist + i + et
+		//fmt.Println(stepDist, newX2, newY2)
+		StorePos["travelOrd"] = StepPos{
+			idOrd,
+			idTask,
+			typeTravelOrd,
+			newX2,
+			newY2,
+			stepDist,
+		}
 		//fmt.Println(StorePos)
-		//sortByEar[i].NewTaskType
+		for _, v := range StorePos {
+			newPos = append(newPos, v)
+		}
+	}
+	//fmt.Println("last task ord points: ", StorePos)
+	// Waiting Time
+	lastPostStoreX := StorePos["travelOrd"].LocX
+	lastPostStoreY := StorePos["travelOrd"].LocY
+	lastElapsedTime := StorePos["travelOrd"].TimeElapsed
+	//fmt.Println(lastPostStoreX,lastPostStoreY)
+	waitTime := StoreByWeight[a].NewDuration
+	for i := 1.0; i < waitTime; i++ {
+		//fmt.Println("wait",i)
+		lastElapsedTime++
+		StorePos["travelOrd"] = StepPos{
+			lastElapsedTime,
+			idTask,
+			typeOperationOrd,
+			lastPostStoreX,
+			lastPostStoreY,
+			0,
+		}
+		//fmt.Println(StorePos)
+		for _, v := range StorePos {
+			newPos = append(newPos, v)
+		}
 	}
 	return
 }

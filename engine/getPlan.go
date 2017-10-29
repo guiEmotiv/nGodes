@@ -8,24 +8,9 @@ import (
 func ConsiderTemptativePlans(e []NewFormatTasks, SVTL1 float64, IDAVTask []int)  {
 
 	mLiberationTimePrev := e[0].NewReleasing
-	//mLiberationTimeNext := e[0].NewReleasing
-
 	mSimXPosPrev := e[0].LocX
-	//mSimYPosPrev := e[0].LocY
 	mSimYPosNext := e[0].LocX
-	//mSimYPosNext := e[0].LocY
 
-	//mOrgXPosPrev := e[0].LocX
-	//mOrgYPosPrev := e[0].LocY
-	//mEmerVerifierPrev := false
-	//mStatingTaskPrev := e[0].NewReleasing
-
-	//mOrgXPosNext := e[0].LocX
-	//mOrgYPosNext := e[0].LocY
-	//mEmerVerifierNext := false
-	//mStatingTaskNext := e[0].NewReleasing
-
-	//mLastTaskCounted := 1
 
 	for j := 1; j < len(IDAVTask); j++ {
 		if mLastTask > 1 {

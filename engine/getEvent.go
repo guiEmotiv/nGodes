@@ -91,9 +91,9 @@ func GetJson(s []NewFormatTasks) {
 	}
 }
 
-func GetOrdinaryTask(s string) OrdinaryTask {
+func GetOrdinaryTask(filepath string) OrdinaryTask {
 	var newJson OrdinaryTask
-	jsonFile, _ := os.Open(s)
+	jsonFile, _ := os.Open(filepath)
 	defer jsonFile.Close()
 	jsonParser := json.NewDecoder(jsonFile)
 	jsonParser.Decode(&newJson)

@@ -5,13 +5,12 @@ var currAlarmTime 				float64
 var xAddressOld 				float64
 var yAddressOld 				float64
 var considerStartExecTime 		float64
-var baseReturn 					bool
+
 var timeShift 					float64 = 100.0
 var runMode 					int
 
 /* VARIABLES GET PLAN */
-var mLastTask 					int
-var LastExecTime 				float64
+var mLastTask	int
 var mTemPlanEntries 			map[int]float64
 var criteriaDos 				bool
 var idTempPlanTask 				int
