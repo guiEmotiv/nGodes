@@ -167,5 +167,57 @@
 		"LocX": 3,
 		"LocY": 3,
 		"Frequency": 0.083333333
+	},
+	{
+		"NewIdTask": 13,
+		"NewIdSite": 11,
+		"NewReleasing": 17.914029876788607,
+		"NewEarliest": 17.914029876788607,
+		"NewLatest": 25.414029876788607,
+		"NewDuration": 7.5,
+		"NewImportance": 100,
+		"NewTaskType": 0,
+		"LocX": 11,
+		"LocY": 11,
+		"Frequency": 0
+	},
+	{
+		"NewIdTask": 14,
+		"NewIdSite": 9,
+		"NewReleasing": 25.396037005408495,
+		"NewEarliest": 25.396037005408495,
+		"NewLatest": 32.896037005408495,
+		"NewDuration": 7.5,
+		"NewImportance": 100,
+		"NewTaskType": 0,
+		"LocX": 4.5,
+		"LocY": 3,
+		"Frequency": 0
+	},
+	{
+		"NewIdTask": 15,
+		"NewIdSite": 9,
+		"NewReleasing": 50.872494707580955,
+		"NewEarliest": 50.872494707580955,
+		"NewLatest": 58.372494707580955,
+		"NewDuration": 7.5,
+		"NewImportance": 100,
+		"NewTaskType": 0,
+		"LocX": 4.5,
+		"LocY": 3,
+		"Frequency": 0
+	},
+	{
+		"NewIdTask": 16,
+		"NewIdSite": 12,
+		"NewReleasing": 58.243473883269004,
+		"NewEarliest": 58.243473883269004,
+		"NewLatest": 65.743473883269,
+		"NewDuration": 7.5,
+		"NewImportance": 100,
+		"NewTaskType": 0,
+		"LocX": 3,
+		"LocY": 3,
+		"Frequency": 0
 	}
 ]

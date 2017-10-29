@@ -15,7 +15,7 @@ func main(){
 	g.GetJson(a)
 	//g.GetNews(a)
 	q := g.GetNews(a)
-	//g.GetNews(a)
+	g.GetJsonClock(q)
 
 	d := gg.NewContext(400,400)
 
@@ -34,21 +34,21 @@ func main(){
 		d.SetRGB(10, 100, 100)
 		d.Fill()
 		d.DrawString(strconv.FormatFloat(q[0].StepPos.LocX, 'f', 6, 64),q[0].StepPos.LocX*20,q[0].StepPos.LocY*20)
-		//if q[i].StepPos.IdTask == 1  {
-		//	d.SetRGB(100, 100, 1)
-		//	d.DrawCircle(q[i].StepPos.LocX*20.0,q[i].StepPos.LocY*20.0,3)
-		//	// fmt.Println("g",q[0].StepPos.LocX*20, q[0].StepPos.LocY*20)
-		//	// fmt.Println("g",q[1].StepPos.LocX*20, q[1].StepPos.LocY*20)
-		//	d.Fill()
-		//}else {
-		//	d.SetRGB(19, 100, 10)
-		//	d.DrawCircle(q[i].StepPos.LocX,q[i].StepPos.LocY,1)
-		//	d.Fill()
-		//}
-		d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,1)
-		 //fmt.Println("g",q[0].StepPos.LocX*20, q[0].StepPos.LocY*20)
-		 //fmt.Println("g",q[1].StepPos.LocX*20, q[1].StepPos.LocY*20)
-		d.Stroke()
+		if q[i].StepPos.IdTask == 1  {
+			d.SetRGB(100, 100, 1)
+			d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,2)
+			// fmt.Println("g",q[0].StepPos.LocX*20, q[0].StepPos.LocY*20)
+			// fmt.Println("g",q[1].StepPos.LocX*20, q[1].StepPos.LocY*20)
+			d.Fill()
+		}else if q[i].StepPos.IdTask == 2{
+			d.SetRGB(19, 100, 10)
+			d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,2)
+			d.Fill()
+		}
+		//d.DrawCircle(q[i].StepPos.LocX*20,q[i].StepPos.LocY*20,1)
+		// //fmt.Println("g",q[0].StepPos.LocX*20, q[0].StepPos.LocY*20)
+		// //fmt.Println("g",q[1].StepPos.LocX*20, q[1].StepPos.LocY*20)
+		//d.Stroke()
 	}
 
 	d.SavePNG("./img/newpos.png")

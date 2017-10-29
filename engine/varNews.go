@@ -8,20 +8,18 @@ type GetPlan struct {
 }
 
 type StepPos struct {
-	TimeElapsed float64
-	IdTask		int
-	TypeStatus 	int
-	LocX		float64
-	LocY		float64
-	Dist 		float64
-	Duration    float64
+	TimeElapsed float64		`json:"time_elapsed"`
+	IdTask		int			`json:"id_task"`
+	TypeStatus 	int			`json:"type_status"`
+	LocX		float64		`json:"loc_x"`
+	LocY		float64		`json:"loc_y"`
+	Dist 		float64		`json:"dist"`
+	Duration    float64		`json:"duration"`
 }
 
-var lastPosOrdX float64
-var lastPosOrdY float64
+var bestEmergency [1]int
 var StorePos = make(map[string]StepPos)
 var StorePlan = make(map[string]GetPlan)
-//var storeIdOrdnew = make([]int,len(sortByWe))
 
 /* SORT EVERY TASKS */
 
@@ -40,10 +38,10 @@ func (a sortByWeight) Less(i, j int) bool {
 	return a[i].NewIdTask < a[j].NewIdTask
 }
 
-
 /* END IT */
 var sortByWe = make([]NewFormatTasks,30)
 var StoreByWeight = map[int]NewFormatTasks{}
+var StoreEmergency = make(map[int]NewFormatTasks)
 var idPlanTaskOrd []int
 var idPlanTaskEmer []int
 
@@ -59,3 +57,6 @@ var baseReturn 	bool
 var LastExecTime float64
 var ConsideredStartExecTime float64
 var deleteId int
+var deleteIdEmergency int
+var lastPosOrdX float64
+var lastPosOrdY float64

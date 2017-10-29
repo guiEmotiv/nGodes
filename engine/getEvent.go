@@ -100,11 +100,3 @@ func GetOrdinaryTask(filepath string) OrdinaryTask {
 	return newJson
 }
 
-func GetTotalEvents(s string) NewFormatTasks {
-	var newJson NewFormatTasks
-	jsonFile, _ := os.Open(s)
-	defer jsonFile.Close()
-	jsonParser := json.NewDecoder(jsonFile)
-	jsonParser.Decode(&newJson)
-	return newJson
-}

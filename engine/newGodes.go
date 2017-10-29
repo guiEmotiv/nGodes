@@ -10,24 +10,26 @@ import (
 
 func GetNews(v []NewFormatTasks) (test []GetPlan) {
 
-	// SORT by Earliest (slice struct type)
+	// SORT by Weight (slice struct type)
 	sortByWe = v[:]
 	sort.Sort(sortByWeight(sortByWe))
 
-	// convert SORT by earliest to map
-	//fmt.Println(sortByWe[13])
+	// convert SORT by Weight to map
 	for k, v := range sortByWe {
 		StoreByWeight[k] = v
 	}
-	//fmt.Println(StoreByWeight[12])
-	// fmt.Println(sortByWe[3])
 	// IDs task ordinary && task Emergency
 	for k, v := range sortByWe {
 		//fmt.Println(" ",sortByWe[k].NewEarliest)
 		if v.NewTaskType == 1 { idPlanTaskOrd = append(idPlanTaskOrd,k) }else { idPlanTaskEmer = append(idPlanTaskEmer,k)}
 	}
-	fmt.Println("idPlanTaskOrd && idPlanTaskEmer: ",idPlanTaskOrd, idPlanTaskEmer)
-
+	// convert Sort by Emergency to map
+	for i := 0; i < len(idPlanTaskEmer); i++ {
+		StoreEmergency[i] = StoreByWeight[idPlanTaskEmer[i]]
+	}
+	fmt.Println("TOTAL len():", len(sortByWe),"  TOTAL TASKS: ",StoreByWeight)
+	fmt.Println("IdPlanTaskOrd && IdPlanTaskEmer: ",idPlanTaskOrd, idPlanTaskEmer)
+	fmt.Println("Release EMERGENCIA: ",StoreEmergency[0].NewEarliest,StoreEmergency[1].NewEarliest)
 	// ordinary tasks assume clock 100 step 1 && guard 1 && 3 state E1 E2 E3
 	elapsedTime = 0
 	for virtualTimeShift > elapsedTime {
@@ -42,8 +44,8 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 			updateX = &aPosX
 			updateY = &aPosY
 
-
-			fmt.Println("puntero inicial : ",*updateX, *updateY)
+			fmt.Println("Puntero Pos inicial x, y: ",*updateX, *updateY)
+			//fmt.Println("Alarma proxima Emergencia", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
 			feasibleIDs()
 			delete(StoreByWeight,0)
 			// append last values
@@ -65,19 +67,30 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 				test = append(test, v)
 			}
 
-			for i := 0; i < len(idPlanTaskOrd); i++ {
+			for g := 0; g < len(idPlanTaskOrd); g++ {
 				/* Validation tasks elapsed */
 				if StoreByWeight != nil {
-					//fmt.Println("existe IDs en plan total",StoreByWeight)
 					// func evaluate nex ord task (time elapsed && score)
 					a := nextPosition(*updateX, *updateY, stepTime)
 					if StoreByWeight[a].NewTaskType != 0 {
 						nPosX = StoreByWeight[a].LocX
 						nPosY = StoreByWeight[a].LocY
-						fmt.Println("next post",a, nPosX,nPosY)
+						fmt.Println("Pos next by BestWeight", nPosX,nPosY)
 						q := runOrdinaryTask(*updateX,*updateY,nPosX,nPosY,stepTime, a)
+
 						for i := 0; i < len(q); i++ {
-							//fmt.Println(q[i].LocX)
+
+							for i := len(idPlanTaskEmer); i >= 0 ; i-- {
+								if StoreEmergency[i].NewEarliest == 0 {
+									continue
+								}else {
+									bestEmergency[0] = i
+								}
+							}
+
+							if q[i].TimeElapsed == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)){
+								break
+							}
 							StorePlan["fa"] = GetPlan{
 								q[i].TimeElapsed,
 								q[i].TimeElapsed,
@@ -95,24 +108,71 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 							for _, v := range StorePlan {
 								test = append(test, v)
 							}
-
 							stepTime = q[i].TimeElapsed
 							updateX = &q[i].LocX
 							updateY = &q[i].LocY
 							fmt.Println(StorePlan)
-
-							if q[i].LocX <= StoreByWeight[a].LocX && q[i].LocY <= StoreByWeight[a].LocY && q[i].Duration == StoreByWeight[a].NewDuration {
+							if q[i].TimeElapsed == 99 {
+								break
+							}
+							if q[i].LocX <= StoreByWeight[a].LocX && q[i].LocY <= StoreByWeight[a].LocY && q[i].Duration == StoreByWeight[a].NewDuration && q[i].Dist == 0{
 								deleteId = a // note delete may change
 							}
 						}
 						delete(StoreByWeight,deleteId)
 						feasibleIDs()
-						fmt.Println("delete:  ", deleteId)
-						//fmt.Println("saliendo: ",StoreByWeight[deleteId])
-						fmt.Println("puntero final : ",*updateX, *updateY)
-						fmt.Println("tarea cumplida id: ",a)
+						fmt.Println("Alarma proxima Emergencia", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
+						fmt.Println("Delete Id:  ", deleteId)
+						fmt.Println("Puntero Pos final : ",*updateX, *updateY)
+						fmt.Println("Tarea cumplida id: ",deleteId)
+						fmt.Println("Last steptime", stepTime)
+
+						if stepTime + 1.0 == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)) {
+							if StoreEmergency == nil{
+								break
+							}
+							fmt.Println("INICIO DE EMERGENCIA")
+							emerPosX := updateX
+							emerPosY := updateY
+							emerX := StoreEmergency[bestEmergency[0]].LocX
+							emerY := StoreEmergency[bestEmergency[0]].LocY
+							fmt.Println("Last Pos X, Y y Next Pos (Emer): ",*emerPosX,*emerPosY,emerX,emerY)
+							e := runEmergencyTask(*emerPosX,*emerPosY,emerX,emerY,stepTime)
+							for i := 0; i < len(e); i++ {
+
+								StorePlan["fa"] = GetPlan{
+									e[i].TimeElapsed,
+									e[i].TimeElapsed,
+									1,
+									StepPos{
+										e[i].TimeElapsed,
+										e[i].IdTask,
+										e[i].TypeStatus,
+										e[i].LocX,
+										e[i].LocY,
+										e[i].Dist,
+										e[i].Duration,
+									},
+								}
+								for _, v := range StorePlan {
+									test = append(test, v)
+								}
+
+								stepTime = e[i].TimeElapsed
+								updateX = &e[i].LocX
+								updateY = &e[i].LocY
+								fmt.Println(StorePlan)
+								if e[i].Dist == 0 && e[i].Duration == StoreEmergency[bestEmergency[0]].NewDuration {
+									break
+								}
+								delete(StoreEmergency,bestEmergency[0])
+							}
+						}
+						fmt.Println("Last steptime, Pos X, Y and IdDeleteEmer by Emer" ,stepTime, *updateX,*updateY, deleteIdEmergency)
+						// EMERGENCY
 					}else {
-						fmt.Println("noob")
+						//fmt.Println(StoreByWeight[8])
+						fmt.Println("Return To Base")
 					}
 				}else {
 					fmt.Println("ar u stupid?..")
@@ -146,6 +206,7 @@ func feasibleIDs()  {
 	//fmt.Println("se acabo",storeIdOrdNew)
 	return
 }
+
 func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	// ORDINARY TASK 4 NEXT POINTS
 	for i := 0; i < len(idPlanTaskEmer); i++ {
@@ -168,8 +229,7 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 			break
 		}
 	}
-	fmt.Println("Lista de IDs tareas Ord por realizar",storeIdOrd)
-
+	fmt.Println("Lista de IDs tareas Ord disponibles: ",storeIdOrd)
 	// CRITERIA
 	xBase := sortByWe[0].LocX
 	yBase := sortByWe[0].LocY
@@ -178,23 +238,23 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	distBase := distance(xConsidered,yConsidered,xBase,yBase)
 	distNext := distance(x1,y1,xConsidered,yConsidered)
 	if et + distBase + distNext + StoreByWeight[bestWeight[0]].NewDuration <= virtualTimeShift - distBase {
-		fmt.Println("tiempo transcurrido:   ",et + distBase + StoreByWeight[bestWeight[0]].NewDuration)
+		fmt.Println("Tiempo proyectado antes de return:   ",et + distBase + StoreByWeight[bestWeight[0]].NewDuration)
 		bestPos = bestWeight[0]
 		fmt.Println("bestWeight: ", bestPos)
 	}else {
-		StoreByWeight[0] = NewFormatTasks{
-			sortByWe[0].NewIdTask,
-			sortByWe[0].NewIdSite,
-			sortByWe[0].NewReleasing,
-			sortByWe[0].NewEarliest,
-			sortByWe[0].NewLatest,
-			1,
-			sortByWe[0].NewImportance,
-			1,
-			sortByWe[0].LocX,
-			sortByWe[0].LocY,
-			sortByWe[0].Frequency,
-		}
+		//StoreByWeight[0] = NewFormatTasks{
+		//	sortByWe[0].NewIdTask,
+		//	sortByWe[0].NewIdSite,
+		//	sortByWe[0].NewReleasing,
+		//	sortByWe[0].NewEarliest,
+		//	sortByWe[0].NewLatest,
+		//	1,
+		//	sortByWe[0].NewImportance,
+		//	1,
+		//	sortByWe[0].LocX,
+		//	sortByWe[0].LocY,
+		//	sortByWe[0].Frequency,
+		//}
 		bestPos = 0
 	}
 	//delete(StoreByWeight,8)
@@ -205,10 +265,10 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 	idTask := 1
 	typeOperationOrd := 2
 	typeTravelOrd := 1
-
+	//typeWaitingOrd := 3
 	arrDist := distance(x1,y1,x2,y2)
-	fmt.Println("wtf: ", x1, y1)
-	fmt.Println("tiempo de llegada: ", arrDist)
+	fmt.Println("Last Posicion Ord (puntero inicial): ", x1, y1)
+	fmt.Println("Tiempo de llegada Ord: ", arrDist)
 	for i := 0.0; i < arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)
@@ -234,13 +294,67 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 			newPos = append(newPos, v)
 		}
 	}
-	//lastPostStoreX := StorePos["travelOrd"].LocX
+
 	lastPostStoreX := x2
-	//lastPostStoreY := StorePos["travelOrd"].LocY
 	lastPostStoreY := y2
 	lastElapsedTime := StorePos["travelOrd"].TimeElapsed
-	//fmt.Println(lastPostStoreX,lastPostStoreY)
 	waitTime := StoreByWeight[a].NewDuration
+	for i := 1.0; i <= waitTime; i++ {
+		//fmt.Println("wait",i)
+		lastElapsedTime++
+		StorePos["travelOrd"] = StepPos{
+			lastElapsedTime,
+			idTask,
+			typeOperationOrd,
+			lastPostStoreX,
+			lastPostStoreY,
+			0,
+			i,
+		}
+		//fmt.Println(StorePos)
+		for _, v := range StorePos {
+			newPos = append(newPos, v)
+		}
+	}
+	return
+}
+
+func runEmergencyTask(x1, y1, x2, y2 float64, et float64) (newPos []StepPos) {
+	idTask := 2
+	typeOperationOrd := 2
+	typeTravelOrd := 1
+	arrDist := distance(x1,y1,x2,y2)
+	fmt.Println("Last Posicion Last Task or Pos (puntero inicial): ", x1, y1)
+	fmt.Println("Tiempo de llegada Emer: ", arrDist)
+	for i := 0.0; i < arrDist; i++ {
+		var newX2, newY2 float64
+		arrDist := distance(x1,y1,x2,y2)
+		newX1 := x1
+		newY1 := y1
+		newX2 = newX1 + (x2 - x1) / arrDist
+		newY2 = newY1 + (y2 - y1) / arrDist
+		x1 = newX2
+		y1 = newY2
+		stepDist = distance(newX1,newY1,newX2,newY2)
+		idEmergency := stepDist + i + et
+		StorePos["travelOrd"] = StepPos{
+			idEmergency,
+			idTask,
+			typeTravelOrd,
+			newX2,
+			newY2,
+			stepDist,
+			i,
+		}
+		//fmt.Println(StorePos)
+		for _, v := range StorePos {
+			newPos = append(newPos, v)
+		}
+	}
+	lastPostStoreX := x2
+	lastPostStoreY := y2
+	lastElapsedTime := StorePos["travelOrd"].TimeElapsed
+	waitTime := StoreEmergency[0].NewDuration
 	for i := 1.0; i <= waitTime; i++ {
 		//fmt.Println("wait",i)
 		lastElapsedTime++
@@ -265,10 +379,14 @@ func distance(x1, y1, x2, y2 float64) float64 {
 	a := math.Pow(math.Pow(x2 - x1,2) + math.Pow(y2 - y1,2),0.5)
 	return a
 }
-func GetJsonDT(s []GetPlan) {
+func GetJsonClock(s []GetPlan) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
-	err := ioutil.WriteFile("./json/eventsDT.json", jsonFile, 0777)
+	err := ioutil.WriteFile("./json/ClockEvents.json", jsonFile, 0777)
 	if err != nil {
 		fmt.Println("error when create JSON file")
 	}
+	fmt.Println("JSON FILE CREATED /json/ClockEvent.json")
 }
+
+
+
