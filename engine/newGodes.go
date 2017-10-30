@@ -90,7 +90,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 								}
 							}
 
-							if q[i].TimeElapsed == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)){
+							if float64(int64(q[i].TimeElapsed)) == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)){
 								break
 							}
 
@@ -140,7 +140,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 						t := acumulativeScore(sumScore)
 
 
-						if stepTime + 1.0 == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)) {
+						if stepTime + 1 == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)) {
 							if StoreEmergency == nil{
 								break
 							}
@@ -339,7 +339,7 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 	arrDist := distance(x1,y1,x2,y2)
 	fmt.Println("Last Posicion Ord (puntero inicial): ", x1, y1)
 	fmt.Println("Tiempo de llegada Ord: ", arrDist)
-	for i := 0.0; i < arrDist; i++ {
+	for i := 0.0; i <= arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)
 		newX1 := x1
@@ -350,6 +350,11 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 		y1 = newY2
 		stepDist = distance(newX1,newY1,newX2,newY2)
 		idOrd := stepDist + i + et
+
+		if arrDist == 0 {
+			break
+		}
+
 		StorePos["travelOrd"] = StepPos{
 			idOrd,
 			idTask,
@@ -396,7 +401,7 @@ func runEmergencyTask(x1, y1, x2, y2 float64, et float64) (newPos []StepPos) {
 	arrDist := distance(x1,y1,x2,y2)
 	fmt.Println("Last Posicion Last Task or Pos (puntero inicial): ", x1, y1)
 	fmt.Println("Tiempo de llegada Emer: ", arrDist)
-	for i := 0.0; i < arrDist; i++ {
+	for i := 0.0; i <= arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)
 		newX1 := x1
@@ -407,6 +412,11 @@ func runEmergencyTask(x1, y1, x2, y2 float64, et float64) (newPos []StepPos) {
 		y1 = newY2
 		stepDist = distance(newX1,newY1,newX2,newY2)
 		idEmergency := stepDist + i + et
+
+		if arrDist == 0 {
+			break
+		}
+
 		StorePos["travelOrd"] = StepPos{
 			idEmergency,
 			idTask,
@@ -447,6 +457,7 @@ func runEmergencyTask(x1, y1, x2, y2 float64, et float64) (newPos []StepPos) {
 
 func distance(x1, y1, x2, y2 float64) float64 {
 	a := math.Pow(math.Pow(x2 - x1,2) + math.Pow(y2 - y1,2),0.5)
+	a = float64(int64(a))
 	return a
 }
 
