@@ -54,11 +54,8 @@ func main(){
 	d.SavePNG("./img/newpos.png")
 
 
-
-
-
-
 }
+
 
 
 

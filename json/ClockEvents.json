@@ -12,39 +12,39 @@
 		"duration": 0
 	},
 	{
-		"id_plan": 1,
-		"step_time": 1,
+		"id_plan": 1.0000000000000004,
+		"step_time": 1.0000000000000004,
 		"id_guard": 1,
-		"time_elapsed": 1,
+		"time_elapsed": 1.0000000000000004,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 6,
-		"loc_y": 10.5,
-		"dist": 1,
+		"loc_x": 6.707106781186548,
+		"loc_y": 8.792893218813452,
+		"dist": 1.0000000000000004,
 		"duration": 0
 	},
 	{
-		"id_plan": 2,
-		"step_time": 2,
+		"id_plan": 2.0000000000000004,
+		"step_time": 2.0000000000000004,
 		"id_guard": 1,
-		"time_elapsed": 2,
+		"time_elapsed": 2.0000000000000004,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 6,
-		"loc_y": 11.5,
-		"dist": 1,
+		"loc_x": 7.414213562373096,
+		"loc_y": 8.085786437626904,
+		"dist": 1.0000000000000004,
 		"duration": 1
 	},
 	{
-		"id_plan": 3,
-		"step_time": 3,
+		"id_plan": 3.0000000000000004,
+		"step_time": 3.0000000000000004,
 		"id_guard": 1,
-		"time_elapsed": 3,
+		"time_elapsed": 3.0000000000000004,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 6,
-		"loc_y": 12.5,
-		"dist": 1,
+		"loc_x": 8.121320343559644,
+		"loc_y": 7.378679656440356,
+		"dist": 1.0000000000000004,
 		"duration": 2
 	},
 	{
@@ -53,11 +53,11 @@
 		"id_guard": 1,
 		"time_elapsed": 4,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 6,
-		"loc_y": 12.5,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 8.828427124746192,
+		"loc_y": 6.671572875253808,
+		"dist": 1.0000000000000004,
+		"duration": 3
 	},
 	{
 		"id_plan": 5,
@@ -65,11 +65,11 @@
 		"id_guard": 1,
 		"time_elapsed": 5,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 6,
-		"loc_y": 12.5,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 9.53553390593274,
+		"loc_y": 5.9644660940672605,
+		"dist": 1.0000000000000004,
+		"duration": 4
 	},
 	{
 		"id_plan": 6,
@@ -77,11 +77,11 @@
 		"id_guard": 1,
 		"time_elapsed": 6,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 6,
-		"loc_y": 12.5,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 10.242640687119287,
+		"loc_y": 5.257359312880713,
+		"dist": 1.0000000000000004,
+		"duration": 5
 	},
 	{
 		"id_plan": 7,
@@ -89,11 +89,11 @@
 		"id_guard": 1,
 		"time_elapsed": 7,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 6,
-		"loc_y": 12.5,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 10.949747468305835,
+		"loc_y": 4.550252531694165,
+		"dist": 1.0000000000000004,
+		"duration": 6
 	},
 	{
 		"id_plan": 8,
@@ -102,10 +102,10 @@
 		"time_elapsed": 8,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 6.894427190999916,
-		"loc_y": 12.947213595499958,
-		"dist": 1,
-		"duration": 0
+		"loc_x": 11.656854249492383,
+		"loc_y": 3.843145750507617,
+		"dist": 1.0000000000000002,
+		"duration": 7
 	},
 	{
 		"id_plan": 9,
@@ -113,10 +113,10 @@
 		"id_guard": 1,
 		"time_elapsed": 9,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 7.7888543819998315,
-		"loc_y": 13.394427190999917,
-		"dist": 1,
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 4.5,
+		"dist": 0,
 		"duration": 1
 	},
 	{
@@ -125,10 +125,10 @@
 		"id_guard": 1,
 		"time_elapsed": 10,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 8.683281572999748,
-		"loc_y": 13.841640786499875,
-		"dist": 1.0000000000000009,
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 4.5,
+		"dist": 0,
 		"duration": 2
 	},
 	{
@@ -137,10 +137,10 @@
 		"id_guard": 1,
 		"time_elapsed": 11,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 9.577708763999665,
-		"loc_y": 14.288854381999833,
-		"dist": 1.0000000000000009,
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 4.5,
+		"dist": 0,
 		"duration": 3
 	},
 	{
@@ -149,10 +149,10 @@
 		"id_guard": 1,
 		"time_elapsed": 12,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 10.472135954999581,
-		"loc_y": 14.736067977499792,
-		"dist": 1.0000000000000009,
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 4.5,
+		"dist": 0,
 		"duration": 4
 	},
 	{
@@ -161,10 +161,10 @@
 		"id_guard": 1,
 		"time_elapsed": 13,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11.366563145999498,
-		"loc_y": 15.183281572999748,
-		"dist": 1,
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 4.5,
+		"dist": 0,
 		"duration": 5
 	},
 	{
@@ -175,9 +175,9 @@
 		"id_task": 1,
 		"type_status": 2,
 		"loc_x": 11,
-		"loc_y": 15,
+		"loc_y": 4.5,
 		"dist": 0,
-		"duration": 1
+		"duration": 6
 	},
 	{
 		"id_plan": 15,
@@ -187,9 +187,9 @@
 		"id_task": 1,
 		"type_status": 2,
 		"loc_x": 11,
-		"loc_y": 15,
+		"loc_y": 4.5,
 		"dist": 0,
-		"duration": 2
+		"duration": 7
 	},
 	{
 		"id_plan": 16,
@@ -197,11 +197,11 @@
 		"id_guard": 1,
 		"time_elapsed": 16,
 		"id_task": 1,
-		"type_status": 2,
+		"type_status": 1,
 		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 3
+		"loc_y": 5.5,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 17,
@@ -210,9 +210,9 @@
 		"time_elapsed": 17,
 		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 14,
-		"dist": 1,
+		"loc_x": 10.04552002196497,
+		"loc_y": 5.201725006864053,
+		"dist": 1.0000000000000002,
 		"duration": 0
 	},
 	{
@@ -222,9 +222,9 @@
 		"time_elapsed": 18,
 		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 13,
-		"dist": 1,
+		"loc_x": 9.09104004392994,
+		"loc_y": 4.903450013728106,
+		"dist": 1.0000000000000002,
 		"duration": 1
 	},
 	{
@@ -234,9 +234,9 @@
 		"time_elapsed": 19,
 		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 12,
-		"dist": 1,
+		"loc_x": 8.13656006589491,
+		"loc_y": 4.605175020592159,
+		"dist": 1.0000000000000002,
 		"duration": 2
 	},
 	{
@@ -246,9 +246,9 @@
 		"time_elapsed": 20,
 		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 1,
+		"loc_x": 7.18208008785988,
+		"loc_y": 4.306900027456212,
+		"dist": 1.0000000000000002,
 		"duration": 3
 	},
 	{
@@ -257,11 +257,11 @@
 		"id_guard": 1,
 		"time_elapsed": 21,
 		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 6.22760010982485,
+		"loc_y": 4.008625034320265,
+		"dist": 1.0000000000000002,
+		"duration": 4
 	},
 	{
 		"id_plan": 22,
@@ -269,11 +269,11 @@
 		"id_guard": 1,
 		"time_elapsed": 22,
 		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 5.27312013178982,
+		"loc_y": 3.7103500411843187,
+		"dist": 1,
+		"duration": 5
 	},
 	{
 		"id_plan": 23,
@@ -281,11 +281,11 @@
 		"id_guard": 1,
 		"time_elapsed": 23,
 		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 4.3186401537547905,
+		"loc_y": 3.412075048048372,
+		"dist": 1,
+		"duration": 6
 	},
 	{
 		"id_plan": 24,
@@ -293,11 +293,11 @@
 		"id_guard": 1,
 		"time_elapsed": 24,
 		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 3.364160175719761,
+		"loc_y": 3.113800054912425,
+		"dist": 0.9999999999999998,
+		"duration": 7
 	},
 	{
 		"id_plan": 25,
@@ -305,11 +305,11 @@
 		"id_guard": 1,
 		"time_elapsed": 25,
 		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 5
+		"type_status": 1,
+		"loc_x": 2.409680197684731,
+		"loc_y": 2.8155250617764787,
+		"dist": 1,
+		"duration": 8
 	},
 	{
 		"id_plan": 26,
@@ -318,10 +318,10 @@
 		"time_elapsed": 26,
 		"id_task": 2,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 6
+		"duration": 1
 	},
 	{
 		"id_plan": 27,
@@ -330,70 +330,70 @@
 		"time_elapsed": 27,
 		"id_task": 2,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 7
+		"duration": 2
 	},
 	{
 		"id_plan": 28,
 		"step_time": 28,
 		"id_guard": 1,
 		"time_elapsed": 28,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 12,
-		"dist": 1,
-		"duration": 0
+		"id_task": 2,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 3
 	},
 	{
 		"id_plan": 29,
 		"step_time": 29,
 		"id_guard": 1,
 		"time_elapsed": 29,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 13,
-		"dist": 1,
-		"duration": 1
+		"id_task": 2,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 4
 	},
 	{
 		"id_plan": 30,
 		"step_time": 30,
 		"id_guard": 1,
 		"time_elapsed": 30,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 14,
-		"dist": 1,
-		"duration": 2
+		"id_task": 2,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 5
 	},
 	{
 		"id_plan": 31,
 		"step_time": 31,
 		"id_guard": 1,
 		"time_elapsed": 31,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 1,
-		"duration": 3
+		"id_task": 2,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 6
 	},
 	{
 		"id_plan": 32,
 		"step_time": 32,
 		"id_guard": 1,
 		"time_elapsed": 32,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 1
+		"duration": 7
 	},
 	{
 		"id_plan": 33,
@@ -401,11 +401,11 @@
 		"id_guard": 1,
 		"time_elapsed": 33,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 3.4702127233849978,
+		"loc_y": 3.882553111584149,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 34,
@@ -413,155 +413,155 @@
 		"id_guard": 1,
 		"time_elapsed": 34,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 3.9404254467699955,
+		"loc_y": 4.765106223168298,
+		"dist": 1,
+		"duration": 1
 	},
 	{
 		"id_plan": 35,
 		"step_time": 35,
 		"id_guard": 1,
 		"time_elapsed": 35,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 4
+		"id_task": 2,
+		"type_status": 1,
+		"loc_x": 4.410638170154993,
+		"loc_y": 5.647659334752447,
+		"dist": 0.9999999999999994,
+		"duration": 0
 	},
 	{
 		"id_plan": 36,
 		"step_time": 36,
 		"id_guard": 1,
 		"time_elapsed": 36,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 10.264644004071197,
-		"loc_y": 14.322318984144045,
-		"dist": 0.9999999999999999,
-		"duration": 0
+		"loc_x": 4.88085089353999,
+		"loc_y": 6.530212446336597,
+		"dist": 1.0000000000000002,
+		"duration": 1
 	},
 	{
 		"id_plan": 37,
 		"step_time": 37,
 		"id_guard": 1,
 		"time_elapsed": 37,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 9.529288008142395,
-		"loc_y": 13.644637968288091,
-		"dist": 0.9999999999999999,
-		"duration": 1
+		"loc_x": 5.351063616924987,
+		"loc_y": 7.412765557920746,
+		"dist": 1.0000000000000002,
+		"duration": 2
 	},
 	{
 		"id_plan": 38,
 		"step_time": 38,
 		"id_guard": 1,
 		"time_elapsed": 38,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 8.793932012213592,
-		"loc_y": 12.966956952432136,
-		"dist": 0.9999999999999999,
-		"duration": 2
+		"loc_x": 5.821276340309985,
+		"loc_y": 8.295318669504896,
+		"dist": 1.0000000000000002,
+		"duration": 3
 	},
 	{
 		"id_plan": 39,
 		"step_time": 39,
 		"id_guard": 1,
 		"time_elapsed": 39,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 8.058576016284789,
-		"loc_y": 12.289275936576182,
-		"dist": 0.9999999999999999,
-		"duration": 3
+		"loc_x": 6.291489063694982,
+		"loc_y": 9.177871781089046,
+		"dist": 1.0000000000000002,
+		"duration": 4
 	},
 	{
 		"id_plan": 40,
 		"step_time": 40,
 		"id_guard": 1,
 		"time_elapsed": 40,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 7.323220020355987,
-		"loc_y": 11.611594920720226,
-		"dist": 1.0000000000000004,
-		"duration": 4
+		"loc_x": 6.76170178707998,
+		"loc_y": 10.060424892673195,
+		"dist": 1.0000000000000007,
+		"duration": 5
 	},
 	{
 		"id_plan": 41,
 		"step_time": 41,
 		"id_guard": 1,
 		"time_elapsed": 41,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 6.587864024427185,
-		"loc_y": 10.93391390486427,
-		"dist": 1.0000000000000004,
-		"duration": 5
+		"loc_x": 7.231914510464978,
+		"loc_y": 10.942978004257345,
+		"dist": 1.0000000000000002,
+		"duration": 6
 	},
 	{
 		"id_plan": 42,
 		"step_time": 42,
 		"id_guard": 1,
 		"time_elapsed": 42,
-		"id_task": 1,
+		"id_task": 2,
 		"type_status": 1,
-		"loc_x": 5.852508028498383,
-		"loc_y": 10.256232889008315,
-		"dist": 0.9999999999999999,
-		"duration": 6
+		"loc_x": 7.702127233849976,
+		"loc_y": 11.825531115841494,
+		"dist": 1.0000000000000007,
+		"duration": 7
 	},
 	{
 		"id_plan": 43,
 		"step_time": 43,
 		"id_guard": 1,
 		"time_elapsed": 43,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 1
+		"id_task": 2,
+		"type_status": 1,
+		"loc_x": 8.172339957234973,
+		"loc_y": 12.708084227425644,
+		"dist": 1.0000000000000002,
+		"duration": 8
 	},
 	{
 		"id_plan": 44,
 		"step_time": 44,
 		"id_guard": 1,
 		"time_elapsed": 44,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 2
+		"id_task": 2,
+		"type_status": 1,
+		"loc_x": 8.642552680619971,
+		"loc_y": 13.590637339009794,
+		"dist": 1.0000000000000007,
+		"duration": 9
 	},
 	{
 		"id_plan": 45,
 		"step_time": 45,
 		"id_guard": 1,
 		"time_elapsed": 45,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 3
+		"id_task": 2,
+		"type_status": 1,
+		"loc_x": 9.11276540400497,
+		"loc_y": 14.473190450593943,
+		"dist": 1.0000000000000007,
+		"duration": 10
 	},
 	{
 		"id_plan": 46,
 		"step_time": 46,
 		"id_guard": 1,
 		"time_elapsed": 46,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 4
+		"id_task": 2,
+		"type_status": 1,
+		"loc_x": 9.582978127389968,
+		"loc_y": 15.355743562178093,
+		"dist": 1.0000000000000007,
+		"duration": 11
 	},
 	{
 		"id_plan": 47,
@@ -569,11 +569,11 @@
 		"id_guard": 1,
 		"time_elapsed": 47,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 5
+		"type_status": 1,
+		"loc_x": 9.059909564418863,
+		"loc_y": 14.503452955382885,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 48,
@@ -581,11 +581,11 @@
 		"id_guard": 1,
 		"time_elapsed": 48,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 6
+		"type_status": 1,
+		"loc_x": 8.536841001447758,
+		"loc_y": 13.651162348587677,
+		"dist": 1,
+		"duration": 1
 	},
 	{
 		"id_plan": 49,
@@ -593,11 +593,11 @@
 		"id_guard": 1,
 		"time_elapsed": 49,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 7
+		"type_status": 1,
+		"loc_x": 8.013772438476654,
+		"loc_y": 12.79887174179247,
+		"dist": 1,
+		"duration": 2
 	},
 	{
 		"id_plan": 50,
@@ -605,11 +605,11 @@
 		"id_guard": 1,
 		"time_elapsed": 50,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.3,
-		"dist": 0,
-		"duration": 8
+		"type_status": 1,
+		"loc_x": 7.490703875505548,
+		"loc_y": 11.946581134997261,
+		"dist": 1.0000000000000004,
+		"duration": 3
 	},
 	{
 		"id_plan": 51,
@@ -618,10 +618,10 @@
 		"time_elapsed": 51,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.711651617681033,
-		"loc_y": 9.317897720765384,
-		"dist": 1.0000000000000007,
-		"duration": 0
+		"loc_x": 6.967635312534442,
+		"loc_y": 11.094290528202054,
+		"dist": 1.0000000000000004,
+		"duration": 4
 	},
 	{
 		"id_plan": 52,
@@ -630,10 +630,10 @@
 		"time_elapsed": 52,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.523303235362065,
-		"loc_y": 8.335795441530767,
-		"dist": 1.0000000000000009,
-		"duration": 1
+		"loc_x": 6.444566749563337,
+		"loc_y": 10.241999921406846,
+		"dist": 1.0000000000000004,
+		"duration": 5
 	},
 	{
 		"id_plan": 53,
@@ -642,10 +642,10 @@
 		"time_elapsed": 53,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.334954853043097,
-		"loc_y": 7.3536931622961506,
-		"dist": 1,
-		"duration": 2
+		"loc_x": 5.921498186592231,
+		"loc_y": 9.389709314611638,
+		"dist": 1.0000000000000004,
+		"duration": 6
 	},
 	{
 		"id_plan": 54,
@@ -654,10 +654,10 @@
 		"time_elapsed": 54,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.14660647072413,
-		"loc_y": 6.371590883061534,
-		"dist": 0.9999999999999998,
-		"duration": 3
+		"loc_x": 5.3984296236211256,
+		"loc_y": 8.53741870781643,
+		"dist": 1.0000000000000004,
+		"duration": 7
 	},
 	{
 		"id_plan": 55,
@@ -666,10 +666,10 @@
 		"time_elapsed": 55,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 4.958258088405163,
-		"loc_y": 5.389488603826918,
+		"loc_x": 4.87536106065002,
+		"loc_y": 7.685128101021223,
 		"dist": 0.9999999999999998,
-		"duration": 4
+		"duration": 8
 	},
 	{
 		"id_plan": 56,
@@ -678,10 +678,10 @@
 		"time_elapsed": 56,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 4.769909706086195,
-		"loc_y": 4.407386324592302,
-		"dist": 1,
-		"duration": 5
+		"loc_x": 4.352292497678914,
+		"loc_y": 6.832837494226016,
+		"dist": 0.9999999999999998,
+		"duration": 9
 	},
 	{
 		"id_plan": 57,
@@ -690,10 +690,10 @@
 		"time_elapsed": 57,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 4.581561323767227,
-		"loc_y": 3.425284045357686,
-		"dist": 1,
-		"duration": 6
+		"loc_x": 3.8292239347078088,
+		"loc_y": 5.980546887430809,
+		"dist": 0.9999999999999998,
+		"duration": 10
 	},
 	{
 		"id_plan": 58,
@@ -702,10 +702,10 @@
 		"time_elapsed": 58,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 4.393212941448261,
-		"loc_y": 2.44318176612307,
-		"dist": 0.9999999999999997,
-		"duration": 7
+		"loc_x": 3.306155371736703,
+		"loc_y": 5.128256280635602,
+		"dist": 0.9999999999999998,
+		"duration": 11
 	},
 	{
 		"id_plan": 59,
@@ -713,11 +713,11 @@
 		"id_guard": 1,
 		"time_elapsed": 59,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 2.7830868087655976,
+		"loc_y": 4.275965673840395,
+		"dist": 0.9999999999999998,
+		"duration": 12
 	},
 	{
 		"id_plan": 60,
@@ -725,11 +725,11 @@
 		"id_guard": 1,
 		"time_elapsed": 60,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 2.260018245794492,
+		"loc_y": 3.423675067045188,
+		"dist": 1.0000000000000002,
+		"duration": 13
 	},
 	{
 		"id_plan": 61,
@@ -737,11 +737,11 @@
 		"id_guard": 1,
 		"time_elapsed": 61,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 1.7369496828233868,
+		"loc_y": 2.5713844602499805,
+		"dist": 0.9999999999999999,
+		"duration": 14
 	},
 	{
 		"id_plan": 62,
@@ -750,10 +750,10 @@
 		"time_elapsed": 62,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 4.5,
+		"loc_x": 2,
 		"loc_y": 3,
 		"dist": 0,
-		"duration": 4
+		"duration": 1
 	},
 	{
 		"id_plan": 63,
@@ -762,10 +762,10 @@
 		"time_elapsed": 63,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 4.5,
+		"loc_x": 2,
 		"loc_y": 3,
 		"dist": 0,
-		"duration": 5
+		"duration": 2
 	},
 	{
 		"id_plan": 64,
@@ -774,10 +774,10 @@
 		"time_elapsed": 64,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 4.5,
+		"loc_x": 2,
 		"loc_y": 3,
 		"dist": 0,
-		"duration": 6
+		"duration": 3
 	},
 	{
 		"id_plan": 65,
@@ -785,11 +785,11 @@
 		"id_guard": 1,
 		"time_elapsed": 65,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 5.47439119569462,
-		"loc_y": 3.2248595066987584,
-		"dist": 1.0000000000000002,
-		"duration": 0
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 4
 	},
 	{
 		"id_plan": 66,
@@ -797,11 +797,11 @@
 		"id_guard": 1,
 		"time_elapsed": 66,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 6.448782391389241,
-		"loc_y": 3.449719013397517,
-		"dist": 1.0000000000000002,
-		"duration": 1
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 5
 	},
 	{
 		"id_plan": 67,
@@ -809,11 +809,11 @@
 		"id_guard": 1,
 		"time_elapsed": 67,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 7.423173587083861,
-		"loc_y": 3.6745785200962753,
-		"dist": 1.0000000000000002,
-		"duration": 2
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 6
 	},
 	{
 		"id_plan": 68,
@@ -822,10 +822,10 @@
 		"time_elapsed": 68,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 8.397564782778481,
-		"loc_y": 3.8994380267950337,
-		"dist": 1.0000000000000002,
-		"duration": 3
+		"loc_x": 2.388057000058133,
+		"loc_y": 3.9216353751380653,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 69,
@@ -834,10 +834,10 @@
 		"time_elapsed": 69,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 9.371955978473101,
-		"loc_y": 4.124297533493793,
-		"dist": 1.0000000000000004,
-		"duration": 4
+		"loc_x": 2.776114000116266,
+		"loc_y": 4.8432707502761305,
+		"dist": 1,
+		"duration": 1
 	},
 	{
 		"id_plan": 70,
@@ -846,10 +846,10 @@
 		"time_elapsed": 70,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 10.346347174167722,
-		"loc_y": 4.3491570401925514,
+		"loc_x": 3.164171000174399,
+		"loc_y": 5.764906125414196,
 		"dist": 1.0000000000000004,
-		"duration": 5
+		"duration": 2
 	},
 	{
 		"id_plan": 71,
@@ -858,10 +858,10 @@
 		"time_elapsed": 71,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 11.320738369862342,
-		"loc_y": 4.574016546891309,
-		"dist": 1.0000000000000002,
-		"duration": 6
+		"loc_x": 3.5522280002325317,
+		"loc_y": 6.686541500552261,
+		"dist": 0.9999999999999996,
+		"duration": 3
 	},
 	{
 		"id_plan": 72,
@@ -869,11 +869,11 @@
 		"id_guard": 1,
 		"time_elapsed": 72,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 3.940285000290664,
+		"loc_y": 7.608176875690326,
+		"dist": 0.9999999999999994,
+		"duration": 4
 	},
 	{
 		"id_plan": 73,
@@ -881,11 +881,11 @@
 		"id_guard": 1,
 		"time_elapsed": 73,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 4.328342000348797,
+		"loc_y": 8.52981225082839,
+		"dist": 0.9999999999999994,
+		"duration": 5
 	},
 	{
 		"id_plan": 74,
@@ -893,11 +893,11 @@
 		"id_guard": 1,
 		"time_elapsed": 74,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 4.71639900040693,
+		"loc_y": 9.451447625966455,
+		"dist": 0.9999999999999996,
+		"duration": 6
 	},
 	{
 		"id_plan": 75,
@@ -905,11 +905,11 @@
 		"id_guard": 1,
 		"time_elapsed": 75,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 5.104456000465062,
+		"loc_y": 10.37308300110452,
+		"dist": 0.9999999999999992,
+		"duration": 7
 	},
 	{
 		"id_plan": 76,
@@ -917,11 +917,11 @@
 		"id_guard": 1,
 		"time_elapsed": 76,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 5
+		"type_status": 1,
+		"loc_x": 5.492513000523195,
+		"loc_y": 11.294718376242585,
+		"dist": 0.9999999999999996,
+		"duration": 8
 	},
 	{
 		"id_plan": 77,
@@ -929,11 +929,11 @@
 		"id_guard": 1,
 		"time_elapsed": 77,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 6
+		"type_status": 1,
+		"loc_x": 5.880570000581327,
+		"loc_y": 12.21635375138065,
+		"dist": 0.9999999999999992,
+		"duration": 9
 	},
 	{
 		"id_plan": 78,
@@ -941,11 +941,11 @@
 		"id_guard": 1,
 		"time_elapsed": 78,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 4.5,
-		"dist": 0,
-		"duration": 7
+		"type_status": 1,
+		"loc_x": 6.268627000639459,
+		"loc_y": 13.137989126518715,
+		"dist": 0.9999999999999992,
+		"duration": 10
 	},
 	{
 		"id_plan": 79,
@@ -953,11 +953,11 @@
 		"id_guard": 1,
 		"time_elapsed": 79,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 5.5,
-		"dist": 1,
-		"duration": 0
+		"type_status": 2,
+		"loc_x": 6,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 1
 	},
 	{
 		"id_plan": 80,
@@ -965,11 +965,11 @@
 		"id_guard": 1,
 		"time_elapsed": 80,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 6.5,
-		"dist": 1,
-		"duration": 1
+		"type_status": 2,
+		"loc_x": 6,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 2
 	},
 	{
 		"id_plan": 81,
@@ -977,11 +977,11 @@
 		"id_guard": 1,
 		"time_elapsed": 81,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 7.5,
-		"dist": 1,
-		"duration": 2
+		"type_status": 2,
+		"loc_x": 6,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 3
 	},
 	{
 		"id_plan": 82,
@@ -989,11 +989,11 @@
 		"id_guard": 1,
 		"time_elapsed": 82,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 8.5,
-		"dist": 1,
-		"duration": 3
+		"type_status": 2,
+		"loc_x": 6,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 4
 	},
 	{
 		"id_plan": 83,
@@ -1002,10 +1002,10 @@
 		"time_elapsed": 83,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 9.5,
-		"dist": 1,
-		"duration": 4
+		"loc_x": 5.6988686320629025,
+		"loc_y": 11.546417334865858,
+		"dist": 1.0000000000000007,
+		"duration": 0
 	},
 	{
 		"id_plan": 84,
@@ -1014,10 +1014,10 @@
 		"time_elapsed": 84,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 10.5,
-		"dist": 1,
-		"duration": 5
+		"loc_x": 5.397737264125805,
+		"loc_y": 10.592834669731715,
+		"dist": 1.0000000000000007,
+		"duration": 1
 	},
 	{
 		"id_plan": 85,
@@ -1026,10 +1026,10 @@
 		"time_elapsed": 85,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 11.5,
-		"dist": 1,
-		"duration": 6
+		"loc_x": 5.0966058961887075,
+		"loc_y": 9.639252004597573,
+		"dist": 1.0000000000000007,
+		"duration": 2
 	},
 	{
 		"id_plan": 86,
@@ -1037,11 +1037,11 @@
 		"id_guard": 1,
 		"time_elapsed": 86,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 4.79547452825161,
+		"loc_y": 8.68566933946343,
+		"dist": 1.0000000000000007,
+		"duration": 3
 	},
 	{
 		"id_plan": 87,
@@ -1049,11 +1049,11 @@
 		"id_guard": 1,
 		"time_elapsed": 87,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 4.4943431603145125,
+		"loc_y": 7.732086674329289,
+		"dist": 0.9999999999999999,
+		"duration": 4
 	},
 	{
 		"id_plan": 88,
@@ -1061,11 +1061,11 @@
 		"id_guard": 1,
 		"time_elapsed": 88,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 4.193211792377415,
+		"loc_y": 6.778504009195148,
+		"dist": 0.9999999999999999,
+		"duration": 5
 	},
 	{
 		"id_plan": 89,
@@ -1073,11 +1073,11 @@
 		"id_guard": 1,
 		"time_elapsed": 89,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 3.8920804244403175,
+		"loc_y": 5.824921344061006,
+		"dist": 0.9999999999999999,
+		"duration": 6
 	},
 	{
 		"id_plan": 90,
@@ -1085,10 +1085,82 @@
 		"id_guard": 1,
 		"time_elapsed": 90,
 		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 3.59094905650322,
+		"loc_y": 4.871338678926865,
+		"dist": 0.9999999999999999,
+		"duration": 7
+	},
+	{
+		"id_plan": 91,
+		"step_time": 91,
+		"id_guard": 1,
+		"time_elapsed": 91,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 3.289817688566123,
+		"loc_y": 3.917756013792723,
+		"dist": 0.9999999999999998,
+		"duration": 8
+	},
+	{
+		"id_plan": 92,
+		"step_time": 92,
+		"id_guard": 1,
+		"time_elapsed": 92,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 2.988686320629026,
+		"loc_y": 2.9641733486585817,
+		"dist": 0.9999999999999998,
+		"duration": 9
+	},
+	{
+		"id_plan": 93,
+		"step_time": 93,
+		"id_guard": 1,
+		"time_elapsed": 93,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 11,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 5
+		"duration": 1
+	},
+	{
+		"id_plan": 94,
+		"step_time": 94,
+		"id_guard": 1,
+		"time_elapsed": 94,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 2
+	},
+	{
+		"id_plan": 95,
+		"step_time": 95,
+		"id_guard": 1,
+		"time_elapsed": 95,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 3
+	},
+	{
+		"id_plan": 96,
+		"step_time": 96,
+		"id_guard": 1,
+		"time_elapsed": 96,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 4
 	}
 ]

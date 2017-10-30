@@ -55,8 +55,14 @@ var stepTime float64
 var stepDist float64
 var baseReturn 	bool
 var LastExecTime float64
-var ConsideredStartExecTime float64
+var consideredStartExecTime float64
 var deleteId int
 var deleteIdEmergency int
 var lastPosOrdX float64
 var lastPosOrdY float64
+var timeSinceConsidered float64
+var xxx float64
+var smoothedWeight float64
+var meanRateAlarmsperShift float64
+var criteriados bool
+var runMode int

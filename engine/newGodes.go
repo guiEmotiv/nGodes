@@ -178,7 +178,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 					fmt.Println("ar u stupid?..")
 				}
 			}
-		}else if StoreByWeight[0].NewTaskType == 0 && StoreByWeight[0].NewImportance != 0{
+		}else if StoreByWeight[0].NewTaskType == 0 && StoreByWeight[0].NewImportance == 100{
 			virtualStartTime = StoreByWeight[0].NewEarliest
 			fmt.Println("E task: ", virtualStartTime, "run bictch...",StoreByWeight[0])
 		}
@@ -216,47 +216,133 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	//fmt.Println("evaluar si exite", StoreByWeight[7])
 	var storeIdOrd = make([]int,len(sortByWe))
 	var bestWeight [1]int
-
+	var m = make(map[int]float64)
+	var t = make([]float64,20)
 	for k, _ := range StoreByWeight {
 		storeIdOrd[k] = k
 		//fmt.Println(k)
 	}
-	for i := 0; i < len(sortByWe); i++ {
-		if storeIdOrd[i] == 0 {
-			continue
+
+
+
+	//xConsidered := StoreByWeight[bestWeight[0]].LocX
+	//yConsidered := StoreByWeight[bestWeight[0]].LocY
+
+	//distNext := distance(x1,y1,xConsidered,yConsidered)
+	//startVirtualTimeL1 := sortByWe[0].NewEarliest
+
+	for k, v := range storeIdOrd {
+
+		if k == 0 {continue}
+		lastExecTime := et
+		xAddressOld := x1
+		yAddressOld := y1
+		xAddressConsidered := StoreByWeight[v].LocX
+		yAddressConsidered := StoreByWeight[v].LocY
+		consideredEarliest := StoreByWeight[v].NewEarliest
+		consideredLastest := StoreByWeight[v].NewLatest
+		consideredDuration := StoreByWeight[v].NewDuration
+		consideredDistance := distance(xAddressOld,yAddressOld,xAddressConsidered,yAddressConsidered)
+
+		if lastExecTime+consideredDistance < consideredEarliest {
+			consideredStartExecTime = consideredEarliest
 		}else {
-			bestWeight[0] = storeIdOrd[i]
+			consideredStartExecTime = lastExecTime + consideredDistance
+		}
+
+		xBase := sortByWe[0].LocX
+		yBase := sortByWe[0].LocY
+		distancetoBase := distance(xAddressConsidered,yAddressConsidered,xBase,yBase)
+
+		if baseReturn == true {
+			if consideredStartExecTime <= virtualTimeShift - distancetoBase - consideredDuration {
+				criteriados = true
+			}else {
+				criteriados = false
+			}
+		}else {
+			if consideredStartExecTime <= virtualTimeShift - consideredDuration {
+				criteriados = true
+			}else {
+				criteriados = false
+			}
+		}
+
+		if lastExecTime + consideredDistance < consideredLastest && criteriados == true {
+
+			weightConsidered := StoreByWeight[v].NewImportance
+			timeSinceConsidered = consideredStartExecTime + consideredDuration - LastExecTime
+
+			if runMode == 4 {
+				smoothedWeight = math.Log(-(meanRateAlarmsperShift / virtualTimeShift) * (consideredStartExecTime - 0))
+				m[k] = math.Pow((weightConsidered * smoothedWeight)/timeSinceConsidered,3)
+			}else {
+				if len(StoreByWeight) > 9 {
+					xxx = GetRandom()
+					if xxx > 0.5 {
+						m[k] = math.Pow(timeSinceConsidered/(100/12),3)
+					}else {
+						m[k] = math.Pow(weightConsidered/timeSinceConsidered,3)
+					}
+				}else {
+					m[k] = math.Pow(weightConsidered/timeSinceConsidered,3)
+				}
+			}
+
+		}
+	}
+
+
+	for k, v := range m {
+		t[k] = v
+	}
+
+	fmt.Println("VAMOS MIERDA", m)
+	fmt.Println("VAMOS MIERDA2", t)
+	sort.Sort(sort.Reverse(sort.Float64Slice(t)))
+	fmt.Println("VAMOS MIERDA3", t)
+	for i := 0; i < len(storeIdOrd); i++ {
+		if m[i] == t[0] {
+			bestWeight[0] = i // send key
 			break
 		}
 	}
+	fmt.Println("VAMOS MIERDA4", bestWeight)
+	bestPos = bestWeight[0]
+
+	//for i := 0; i < len(sortByWe); i++ {
+	//	if storeIdOrd[i] == 0 {
+	//		continue
+	//	}else {
+	//		bestWeight[0] = storeIdOrd[i]
+	//		break
+	//	}
+	//}
+
 	fmt.Println("Lista de IDs tareas Ord disponibles: ",storeIdOrd)
 	// CRITERIA
-	xBase := sortByWe[0].LocX
-	yBase := sortByWe[0].LocY
-	xConsidered := StoreByWeight[bestWeight[0]].LocX
-	yConsidered := StoreByWeight[bestWeight[0]].LocY
-	distBase := distance(xConsidered,yConsidered,xBase,yBase)
-	distNext := distance(x1,y1,xConsidered,yConsidered)
-	if et + distBase + distNext + StoreByWeight[bestWeight[0]].NewDuration <= virtualTimeShift - distBase {
-		fmt.Println("Tiempo proyectado antes de return:   ",et + distBase + StoreByWeight[bestWeight[0]].NewDuration)
-		bestPos = bestWeight[0]
-		fmt.Println("bestWeight: ", bestPos)
-	}else {
-		//StoreByWeight[0] = NewFormatTasks{
-		//	sortByWe[0].NewIdTask,
-		//	sortByWe[0].NewIdSite,
-		//	sortByWe[0].NewReleasing,
-		//	sortByWe[0].NewEarliest,
-		//	sortByWe[0].NewLatest,
-		//	1,
-		//	sortByWe[0].NewImportance,
-		//	1,
-		//	sortByWe[0].LocX,
-		//	sortByWe[0].LocY,
-		//	sortByWe[0].Frequency,
-		//}
-		bestPos = 0
-	}
+
+	//if et + distBase + distNext + StoreByWeight[bestWeight[0]].NewDuration <= virtualTimeShift - distBase {
+	//	fmt.Println("Tiempo proyectado antes de return:   ",et + distBase + StoreByWeight[bestWeight[0]].NewDuration)
+	//	bestPos = bestWeight[0]
+	//	fmt.Println("bestWeight: ", bestPos)
+	//
+	//}else {
+	//	//StoreByWeight[0] = NewFormatTasks{
+	//	//	sortByWe[0].NewIdTask,
+	//	//	sortByWe[0].NewIdSite,
+	//	//	sortByWe[0].NewReleasing,
+	//	//	sortByWe[0].NewEarliest,
+	//	//	sortByWe[0].NewLatest,
+	//	//	1,
+	//	//	sortByWe[0].NewImportance,
+	//	//	1,
+	//	//	sortByWe[0].LocX,
+	//	//	sortByWe[0].LocY,
+	//	//	sortByWe[0].Frequency,
+	//	//}
+	//	bestPos = 0
+	//}
 	//delete(StoreByWeight,8)
 	return
 }
