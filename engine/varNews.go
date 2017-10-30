@@ -66,3 +66,5 @@ var smoothedWeight float64
 var meanRateAlarmsperShift float64
 var criteriados bool
 var runMode int
+var selectScore int
+var acScore float64

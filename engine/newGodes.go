@@ -8,7 +8,9 @@ import (
 	"sort"
 )
 
-func GetNews(v []NewFormatTasks) (test []GetPlan) {
+func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
+	// ARRAY scores total
+	var sumScore = make([]float64,len(v))
 
 	// SORT by Weight (slice struct type)
 	sortByWe = v[:]
@@ -36,7 +38,6 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 
 		if StoreByWeight[0].NewTaskType == 1 {
 			/* init values */
-
  			stepTime = elapsedTime
 			virtualStartTime = StoreByWeight[0].NewEarliest
 			aPosX = StoreByWeight[0].LocX
@@ -76,21 +77,23 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 						nPosX = StoreByWeight[a].LocX
 						nPosY = StoreByWeight[a].LocY
 						fmt.Println("Pos next by BestWeight", nPosX,nPosY)
+						fmt.Println("---------- INICIO DE ORDINARY ------------")
 						q := runOrdinaryTask(*updateX,*updateY,nPosX,nPosY,stepTime, a)
 
 						for i := 0; i < len(q); i++ {
 
-							for i := len(idPlanTaskEmer); i >= 0 ; i-- {
-								if StoreEmergency[i].NewEarliest == 0 {
+							for w := len(idPlanTaskEmer); w >= 0 ; w-- {
+								if StoreEmergency[w].NewEarliest == 0 {
 									continue
 								}else {
-									bestEmergency[0] = i
+									bestEmergency[0] = w
 								}
 							}
 
 							if q[i].TimeElapsed == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)){
 								break
 							}
+
 							StorePlan["fa"] = GetPlan{
 								q[i].TimeElapsed,
 								q[i].TimeElapsed,
@@ -105,9 +108,11 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 									q[i].Duration,
 								},
 							}
+
 							for _, v := range StorePlan {
 								test = append(test, v)
 							}
+
 							stepTime = q[i].TimeElapsed
 							updateX = &q[i].LocX
 							updateY = &q[i].LocY
@@ -119,19 +124,27 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 								deleteId = a // note delete may change
 							}
 						}
+						fmt.Println("---------- FIN DE ORDINARY ------------")
 						delete(StoreByWeight,deleteId)
+						//fmt.Println("adjuntar",acScore)
+						if deleteId == selectScore {
+							sumScore[deleteId] = acScore
+						}
+						fmt.Println("ARRAY SCORES BY IDTASK: ", sumScore)
 						feasibleIDs()
 						fmt.Println("Alarma proxima Emergencia", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
 						fmt.Println("Delete Id:  ", deleteId)
 						fmt.Println("Puntero Pos final : ",*updateX, *updateY)
 						fmt.Println("Tarea cumplida id: ",deleteId)
 						fmt.Println("Last steptime", stepTime)
+						t := acumulativeScore(sumScore)
+
 
 						if stepTime + 1.0 == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)) {
 							if StoreEmergency == nil{
 								break
 							}
-							fmt.Println("INICIO DE EMERGENCIA")
+							fmt.Println("---------- INICIO DE EMERGENCIA ------------")
 							emerPosX := updateX
 							emerPosY := updateY
 							emerX := StoreEmergency[bestEmergency[0]].LocX
@@ -166,10 +179,13 @@ func GetNews(v []NewFormatTasks) (test []GetPlan) {
 									break
 								}
 								delete(StoreEmergency,bestEmergency[0])
+								sumScore[idPlanTaskEmer[bestEmergency[0]]] = 100
 							}
+							fmt.Println("---------- FIN DE EMERGENCIA ------------")
+							fmt.Println("Last (steptime), Posicion (X, Y) and (IdDeleteEmer) by Emer" ,stepTime, *updateX,*updateY, deleteIdEmergency)
 						}
-						fmt.Println("Last steptime, Pos X, Y and IdDeleteEmer by Emer" ,stepTime, *updateX,*updateY, deleteIdEmergency)
-						// EMERGENCY
+						fmt.Println("ACTUALIZACION SCORE ------ : ",t)
+						PA = t
 					}else {
 						//fmt.Println(StoreByWeight[8])
 						fmt.Println("Return To Base")
@@ -265,7 +281,7 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 			timeSinceConsidered = consideredStartExecTime + consideredDuration - LastExecTime
 
 			if runMode == 4 {
-				smoothedWeight = math.Log(-(meanRateAlarmsperShift / virtualTimeShift) * (consideredStartExecTime - 0))
+				smoothedWeight = math.Log(-(meanRateAlarmsperShift / virtualTimeShift) * (consideredStartExecTime - 0.0001))
 				m[k] = math.Pow((weightConsidered * smoothedWeight)/timeSinceConsidered,3)
 			}else {
 				if len(StoreByWeight) > 9 {
@@ -286,18 +302,21 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	for k, v := range m {
 		t[k] = v
 	}
-	fmt.Println("VAMOS MIERDA", m)
-	fmt.Println("VAMOS MIERDA2", t)
+	fmt.Println("MAP ORD TASK BY WEIGHT: ", m)
+	fmt.Println("SLICE Ord Task by WEIGHT: ", t)
 	sort.Sort(sort.Reverse(sort.Float64Slice(t)))
-	fmt.Println("VAMOS MIERDA3", t)
+	fmt.Println("SORT By Weight: ", t)
 	for i := 0; i < len(storeIdOrd); i++ {
 		if m[i] == t[0] {
 			bestWeight[0] = i // send key
 			break
 		}
 	}
-	fmt.Println("VAMOS MIERDA4", bestWeight)
+	fmt.Println("bestWeight", bestWeight)
 	bestPos = bestWeight[0]
+	selectScore = bestWeight[0]
+	acScore = t[0]
+
 	//for i := 0; i < len(sortByWe); i++ {
 	//	if storeIdOrd[i] == 0 {
 	//		continue
@@ -306,6 +325,7 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	//		break
 	//	}
 	//}
+
 	fmt.Println("Lista de IDs tareas Ord disponibles: ",storeIdOrd)
 
 	return
@@ -429,6 +449,17 @@ func distance(x1, y1, x2, y2 float64) float64 {
 	a := math.Pow(math.Pow(x2 - x1,2) + math.Pow(y2 - y1,2),0.5)
 	return a
 }
+
+func acumulativeScore(s []float64) (scoreTotal float64){
+	var sumarScores float64
+	for _, v := range s {
+		sumarScores += v
+		//fmt.Println("VALORES DEL ARRAY SCORES: ",v)
+	}
+	scoreTotal = sumarScores
+	return
+}
+
 func GetJsonClock(s []GetPlan) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
 	err := ioutil.WriteFile("./json/ClockEvents.json", jsonFile, 0777)
