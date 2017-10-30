@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d38f69c7-5fdb-421f-a3e9-3bd0584cba67" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/engine/getPlan.go" afterPath="$PROJECT_DIR$/engine/getPlan.go" />
       <change beforePath="$PROJECT_DIR$/engine/newGodes.go" afterPath="$PROJECT_DIR$/engine/newGodes.go" />
-      <change beforePath="$PROJECT_DIR$/engine/varNews.go" afterPath="$PROJECT_DIR$/engine/varNews.go" />
-      <change beforePath="$PROJECT_DIR$/engine/varPlan.go" afterPath="$PROJECT_DIR$/engine/varPlan.go" />
-      <change beforePath="$PROJECT_DIR$/img/newpos.png" afterPath="$PROJECT_DIR$/img/newpos.png" />
-      <change beforePath="$PROJECT_DIR$/json/ClockEvents.json" afterPath="$PROJECT_DIR$/json/ClockEvents.json" />
-      <change beforePath="$PROJECT_DIR$/json/eventsTotal.json" afterPath="$PROJECT_DIR$/json/eventsTotal.json" />
-      <change beforePath="$PROJECT_DIR$/json/ordinarytask.json" afterPath="$PROJECT_DIR$/json/ordinarytask.json" />
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +49,8 @@
           <file leaf-file-name="newGodes.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/engine/newGodes.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="893">
-                  <caret line="304" column="25" lean-forward="true" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="25" />
+                <state relative-caret-position="-748">
+                  <caret line="218" column="32" lean-forward="true" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
                   <folding>
                     <element signature="n#!!block;n#feasibleIDs#0" expanded="false" />
                     <element signature="n#!!block;n#runEmergencyTask#0" expanded="false" />
@@ -199,8 +190,8 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/engine/varPlan.go" />
         <option value="$PROJECT_DIR$/engine/varNews.go" />
-        <option value="$PROJECT_DIR$/engine/newGodes.go" />
         <option value="$PROJECT_DIR$/engine/getPlan.go" />
+        <option value="$PROJECT_DIR$/engine/newGodes.go" />
       </list>
     </option>
   </component>
@@ -377,6 +368,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13984375" sideWeight="0.4882698" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -752,8 +744,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/newGodes.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="304" column="25" lean-forward="true" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="25" />
+        <state relative-caret-position="-748">
+          <caret line="218" column="32" lean-forward="true" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
           <folding>
             <element signature="n#!!block;n#feasibleIDs#0" expanded="false" />
             <element signature="n#!!block;n#runEmergencyTask#0" expanded="false" />

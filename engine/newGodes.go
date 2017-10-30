@@ -222,15 +222,6 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 		storeIdOrd[k] = k
 		//fmt.Println(k)
 	}
-
-
-
-	//xConsidered := StoreByWeight[bestWeight[0]].LocX
-	//yConsidered := StoreByWeight[bestWeight[0]].LocY
-
-	//distNext := distance(x1,y1,xConsidered,yConsidered)
-	//startVirtualTimeL1 := sortByWe[0].NewEarliest
-
 	for k, v := range storeIdOrd {
 
 		if k == 0 {continue}
@@ -292,11 +283,9 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 		}
 	}
 
-
 	for k, v := range m {
 		t[k] = v
 	}
-
 	fmt.Println("VAMOS MIERDA", m)
 	fmt.Println("VAMOS MIERDA2", t)
 	sort.Sort(sort.Reverse(sort.Float64Slice(t)))
@@ -309,7 +298,6 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	}
 	fmt.Println("VAMOS MIERDA4", bestWeight)
 	bestPos = bestWeight[0]
-
 	//for i := 0; i < len(sortByWe); i++ {
 	//	if storeIdOrd[i] == 0 {
 	//		continue
@@ -318,32 +306,8 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	//		break
 	//	}
 	//}
-
 	fmt.Println("Lista de IDs tareas Ord disponibles: ",storeIdOrd)
-	// CRITERIA
 
-	//if et + distBase + distNext + StoreByWeight[bestWeight[0]].NewDuration <= virtualTimeShift - distBase {
-	//	fmt.Println("Tiempo proyectado antes de return:   ",et + distBase + StoreByWeight[bestWeight[0]].NewDuration)
-	//	bestPos = bestWeight[0]
-	//	fmt.Println("bestWeight: ", bestPos)
-	//
-	//}else {
-	//	//StoreByWeight[0] = NewFormatTasks{
-	//	//	sortByWe[0].NewIdTask,
-	//	//	sortByWe[0].NewIdSite,
-	//	//	sortByWe[0].NewReleasing,
-	//	//	sortByWe[0].NewEarliest,
-	//	//	sortByWe[0].NewLatest,
-	//	//	1,
-	//	//	sortByWe[0].NewImportance,
-	//	//	1,
-	//	//	sortByWe[0].LocX,
-	//	//	sortByWe[0].LocY,
-	//	//	sortByWe[0].Frequency,
-	//	//}
-	//	bestPos = 0
-	//}
-	//delete(StoreByWeight,8)
 	return
 }
 
