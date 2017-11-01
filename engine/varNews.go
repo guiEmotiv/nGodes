@@ -39,7 +39,8 @@ func (a sortByWeight) Less(i, j int) bool {
 }
 
 /* END IT */
-var sortByWe = make([]NewFormatTasks,30)
+var sortByWe = make([]NewFormatTasks,lenAllTaskIDs)
+
 var StoreByWeight = map[int]NewFormatTasks{}
 var StoreEmergency = make(map[int]NewFormatTasks)
 var idPlanTaskOrd []int
@@ -68,3 +69,4 @@ var criteriados bool
 var runMode int
 var selectScore int
 var acScore float64
+var lenAllTaskIDs int

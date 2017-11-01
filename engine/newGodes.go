@@ -9,9 +9,10 @@ import (
 )
 
 func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
+	fmt.Println("---------------------- START SIMULADOR DE EVENTOS DISCRETOS ----------------------")
 	// ARRAY scores total
-	var sumScore = make([]float64,len(v))
-
+	lenAllTaskIDs = len(v)
+	var sumScore = make([]float64,lenAllTaskIDs)
 	// SORT by Weight (slice struct type)
 	sortByWe = v[:]
 	sort.Sort(sortByWeight(sortByWe))
@@ -19,19 +20,19 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 	// convert SORT by Weight to map
 	for k, v := range sortByWe {
 		StoreByWeight[k] = v
+		fmt.Println("# Total Tasks: ", len(sortByWe), " -  Task Generated: ", StoreByWeight[k])
 	}
 	// IDs task ordinary && task Emergency
 	for k, v := range sortByWe {
 		//fmt.Println(" ",sortByWe[k].NewEarliest)
 		if v.NewTaskType == 1 { idPlanTaskOrd = append(idPlanTaskOrd,k) }else { idPlanTaskEmer = append(idPlanTaskEmer,k)}
 	}
+	fmt.Println("ORDINARY TASK IDs: ", idPlanTaskOrd, " -  EMERGENCY TASK IDs: ", idPlanTaskEmer)
 	// convert Sort by Emergency to map
 	for i := 0; i < len(idPlanTaskEmer); i++ {
 		StoreEmergency[i] = StoreByWeight[idPlanTaskEmer[i]]
+		fmt.Printf("RELEASE EMERGENCY: %g \n", StoreEmergency[i].NewEarliest)
 	}
-	fmt.Println("TOTAL len():", len(sortByWe),"  TOTAL TASKS: ",StoreByWeight)
-	fmt.Println("IdPlanTaskOrd && IdPlanTaskEmer: ",idPlanTaskOrd, idPlanTaskEmer)
-	fmt.Println("Release EMERGENCIA: ",StoreEmergency[0].NewEarliest,StoreEmergency[1].NewEarliest)
 	// ordinary tasks assume clock 100 step 1 && guard 1 && 3 state E1 E2 E3
 	elapsedTime = 0
 	for virtualTimeShift > elapsedTime {
@@ -44,13 +45,12 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 			aPosY = StoreByWeight[0].LocY
 			updateX = &aPosX
 			updateY = &aPosY
+			fmt.Printf("POINTER POS INICIAL X:%g  Y:%g \n", *updateX, *updateY)
 
-			fmt.Println("Puntero Pos inicial x, y: ",*updateX, *updateY)
-			//fmt.Println("Alarma proxima Emergencia", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
 			feasibleIDs()
 			delete(StoreByWeight,0)
 			// append last values
-			StorePlan["fa"] = GetPlan{
+			StorePlan["Time Elapsed"] = GetPlan{
 				0,
 				0,
 				1,
@@ -71,12 +71,15 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 			for g := 0; g < len(idPlanTaskOrd); g++ {
 				/* Validation tasks elapsed */
 				if StoreByWeight != nil {
-					// func evaluate nex ord task (time elapsed && score)
+					// func evaluate next ord task (time elapsed && score)
 					a := nextPosition(*updateX, *updateY, stepTime)
 					if StoreByWeight[a].NewTaskType != 0 {
 						nPosX = StoreByWeight[a].LocX
 						nPosY = StoreByWeight[a].LocY
-						fmt.Println("Pos next by BestWeight", nPosX,nPosY)
+						fmt.Printf("NEXT POSITION By BEST WEIGHT X:%g Y:%g \n", nPosX,nPosY)
+						fmt.Println("relax: ", StoreByWeight[idPlanTaskOrd[a]])
+						fmt.Printf("\n")
+						fmt.Println("--- REMEMBER RELEASE ALARM TIME: ", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
 						fmt.Println("---------- INICIO DE ORDINARY ------------")
 						q := runOrdinaryTask(*updateX,*updateY,nPosX,nPosY,stepTime, a)
 
@@ -94,7 +97,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 								break
 							}
 
-							StorePlan["fa"] = GetPlan{
+							StorePlan["Time Elapsed"] = GetPlan{
 								q[i].TimeElapsed,
 								q[i].TimeElapsed,
 								1,
@@ -125,35 +128,36 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 							}
 						}
 						fmt.Println("---------- FIN DE ORDINARY ------------")
+						fmt.Printf("\n")
 						delete(StoreByWeight,deleteId)
-						//fmt.Println("adjuntar",acScore)
 						if deleteId == selectScore {
 							sumScore[deleteId] = acScore
+							fmt.Printf("TASK ACCOMPLISHED (Delete ID # %d) \n", deleteId)
+						}else {
+							fmt.Println("--- WARNING UNFULFILLED TASK")
 						}
-						fmt.Println("ARRAY SCORES BY IDTASK: ", sumScore)
-						feasibleIDs()
-						fmt.Println("Alarma proxima Emergencia", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
-						fmt.Println("Delete Id:  ", deleteId)
-						fmt.Println("Puntero Pos final : ",*updateX, *updateY)
-						fmt.Println("Tarea cumplida id: ",deleteId)
-						fmt.Println("Last steptime", stepTime)
+						fmt.Println("LIST SCORES ACCOMPLISHED By ID: ", sumScore)
+						fmt.Printf("\n")
+						fmt.Printf("POINTER POS FINAL AFTER LAST TASK X:%g Y:%g \n",*updateX, *updateY)
+						fmt.Println("ELAPSED TIME AFTER LAST TASK: ", stepTime)
 						t := acumulativeScore(sumScore)
-
 
 						if stepTime + 1 == float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)) {
 							if StoreEmergency == nil{
 								break
 							}
+							fmt.Printf("\n")
 							fmt.Println("---------- INICIO DE EMERGENCIA ------------")
 							emerPosX := updateX
 							emerPosY := updateY
 							emerX := StoreEmergency[bestEmergency[0]].LocX
 							emerY := StoreEmergency[bestEmergency[0]].LocY
-							fmt.Println("Last Pos X, Y y Next Pos (Emer): ",*emerPosX,*emerPosY,emerX,emerY)
+							//fmt.Printf("LAST POS X:%g Y:%g - NEXT POS X:%g Y:%g \n", *emerPosX,*emerPosY,emerX,emerY)
+							fmt.Printf("ID: %d \n", idPlanTaskEmer[bestEmergency[0]])
 							e := runEmergencyTask(*emerPosX,*emerPosY,emerX,emerY,stepTime)
 							for i := 0; i < len(e); i++ {
 
-								StorePlan["fa"] = GetPlan{
+								StorePlan["Time Elapsed"] = GetPlan{
 									e[i].TimeElapsed,
 									e[i].TimeElapsed,
 									1,
@@ -182,13 +186,16 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 								sumScore[idPlanTaskEmer[bestEmergency[0]]] = 100
 							}
 							fmt.Println("---------- FIN DE EMERGENCIA ------------")
-							fmt.Println("Last (steptime), Posicion (X, Y) and (IdDeleteEmer) by Emer" ,stepTime, *updateX,*updateY, deleteIdEmergency)
+							fmt.Printf("\n")
+							fmt.Printf("ELAPSED TIME AFTER LAST TASK: %g - X:%g Y:%g - ACCOMPLISHED ID: %d ", stepTime,*updateX,*updateY, idPlanTaskEmer[bestEmergency[0]])
 						}
+						fmt.Printf("\n")
 						fmt.Println("ACTUALIZACION SCORE ------ : ",t)
+						fmt.Printf("\n")
 						PA = t
 					}else {
-						//fmt.Println(StoreByWeight[8])
-						fmt.Println("Return To Base")
+						break
+						//fmt.Println("Return To Base")
 					}
 				}else {
 					fmt.Println("ar u stupid?..")
@@ -203,6 +210,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 		stepTime++
 		fmt.Println(elapsedTime)
 	}
+	fmt.Println("---------------------- END SIMULADOR DE EVENTOS DISCRETOS ----------------------")
 	return
 }
 func feasibleIDs()  {
@@ -259,10 +267,10 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 
 		xBase := sortByWe[0].LocX
 		yBase := sortByWe[0].LocY
-		distancetoBase := distance(xAddressConsidered,yAddressConsidered,xBase,yBase)
+		distanceToBase := distance(xAddressConsidered,yAddressConsidered,xBase,yBase)
 
 		if baseReturn == true {
-			if consideredStartExecTime <= virtualTimeShift - distancetoBase - consideredDuration {
+			if consideredStartExecTime <= virtualTimeShift - distanceToBase - consideredDuration {
 				criteriados = true
 			}else {
 				criteriados = false
@@ -302,17 +310,17 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	for k, v := range m {
 		t[k] = v
 	}
-	fmt.Println("MAP ORD TASK BY WEIGHT: ", m)
-	fmt.Println("SLICE Ord Task by WEIGHT: ", t)
+	fmt.Println("WEIGHT By SITE: ", m)
+	//fmt.Println("CONVERT To SLICE: ", t)
 	sort.Sort(sort.Reverse(sort.Float64Slice(t)))
-	fmt.Println("SORT By Weight: ", t)
+	fmt.Println("SORT By BEST WEIGHT: ", t)
 	for i := 0; i < len(storeIdOrd); i++ {
 		if m[i] == t[0] {
 			bestWeight[0] = i // send key
 			break
 		}
 	}
-	fmt.Println("bestWeight", bestWeight)
+	fmt.Printf("BEST WEIGHT: ID %d \n",bestWeight)
 	bestPos = bestWeight[0]
 	selectScore = bestWeight[0]
 	acScore = t[0]
@@ -326,7 +334,7 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 	//	}
 	//}
 
-	fmt.Println("Lista de IDs tareas Ord disponibles: ",storeIdOrd)
+	fmt.Println("UPDATE FEASIBLES ORDINARY TASKS: ",storeIdOrd)
 
 	return
 }
@@ -337,8 +345,8 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 	typeTravelOrd := 1
 	//typeWaitingOrd := 3
 	arrDist := distance(x1,y1,x2,y2)
-	fmt.Println("Last Posicion Ord (puntero inicial): ", x1, y1)
-	fmt.Println("Tiempo de llegada Ord: ", arrDist)
+	fmt.Printf("---ORDINARY TASK (LAST POSITION X:%g Y:%g): \n", x1, y1)
+	fmt.Println("ORDINARY TASK ARRIVAL TIME: ", arrDist)
 	for i := 0.0; i <= arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)
@@ -399,8 +407,8 @@ func runEmergencyTask(x1, y1, x2, y2 float64, et float64) (newPos []StepPos) {
 	typeOperationOrd := 2
 	typeTravelOrd := 1
 	arrDist := distance(x1,y1,x2,y2)
-	fmt.Println("Last Posicion Last Task or Pos (puntero inicial): ", x1, y1)
-	fmt.Println("Tiempo de llegada Emer: ", arrDist)
+	fmt.Printf("---EMERGENCY TASK (LAST POSITION X:%g Y:%g): \n", x1, y1)
+	fmt.Println("EMERGENCY TASK ARRIVAL TIME: ", arrDist)
 	for i := 0.0; i <= arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)

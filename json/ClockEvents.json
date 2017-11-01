@@ -18,8 +18,8 @@
 		"time_elapsed": 1,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
+		"loc_x": 7,
+		"loc_y": 9.8,
 		"dist": 1,
 		"duration": 0
 	},
@@ -29,10 +29,10 @@
 		"id_guard": 1,
 		"time_elapsed": 2,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
-		"dist": 0,
+		"type_status": 1,
+		"loc_x": 8,
+		"loc_y": 10.100000000000001,
+		"dist": 1,
 		"duration": 1
 	},
 	{
@@ -41,10 +41,10 @@
 		"id_guard": 1,
 		"time_elapsed": 3,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
-		"dist": 0,
+		"type_status": 1,
+		"loc_x": 9,
+		"loc_y": 10.4,
+		"dist": 1,
 		"duration": 2
 	},
 	{
@@ -53,10 +53,10 @@
 		"id_guard": 1,
 		"time_elapsed": 4,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
-		"dist": 0,
+		"type_status": 1,
+		"loc_x": 10,
+		"loc_y": 10.7,
+		"dist": 1,
 		"duration": 3
 	},
 	{
@@ -65,10 +65,10 @@
 		"id_guard": 1,
 		"time_elapsed": 5,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
-		"dist": 0,
+		"type_status": 1,
+		"loc_x": 11,
+		"loc_y": 11,
+		"dist": 1,
 		"duration": 4
 	},
 	{
@@ -78,10 +78,10 @@
 		"time_elapsed": 6,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
+		"loc_x": 11,
+		"loc_y": 11,
 		"dist": 0,
-		"duration": 5
+		"duration": 1
 	},
 	{
 		"id_plan": 7,
@@ -90,10 +90,10 @@
 		"time_elapsed": 7,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
+		"loc_x": 11,
+		"loc_y": 11,
 		"dist": 0,
-		"duration": 6
+		"duration": 2
 	},
 	{
 		"id_plan": 8,
@@ -102,10 +102,10 @@
 		"time_elapsed": 8,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
+		"loc_x": 11,
+		"loc_y": 11,
 		"dist": 0,
-		"duration": 7
+		"duration": 3
 	},
 	{
 		"id_plan": 9,
@@ -114,10 +114,10 @@
 		"time_elapsed": 9,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 5.9,
-		"loc_y": 10.5,
+		"loc_x": 11,
+		"loc_y": 11,
 		"dist": 0,
-		"duration": 8
+		"duration": 4
 	},
 	{
 		"id_plan": 10,
@@ -125,11 +125,11 @@
 		"id_guard": 1,
 		"time_elapsed": 10,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 6.628571428571429,
-		"loc_y": 9.642857142857142,
-		"dist": 1,
-		"duration": 0
+		"type_status": 2,
+		"loc_x": 11,
+		"loc_y": 11,
+		"dist": 0,
+		"duration": 5
 	},
 	{
 		"id_plan": 11,
@@ -138,10 +138,10 @@
 		"time_elapsed": 11,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 7.357142857142858,
-		"loc_y": 8.785714285714285,
+		"loc_x": 10.35,
+		"loc_y": 10.2,
 		"dist": 1,
-		"duration": 1
+		"duration": 0
 	},
 	{
 		"id_plan": 12,
@@ -150,10 +150,10 @@
 		"time_elapsed": 12,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 8.085714285714285,
-		"loc_y": 7.928571428571428,
+		"loc_x": 9.7,
+		"loc_y": 9.399999999999999,
 		"dist": 1,
-		"duration": 2
+		"duration": 1
 	},
 	{
 		"id_plan": 13,
@@ -162,424 +162,172 @@
 		"time_elapsed": 13,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 8.814285714285713,
-		"loc_y": 7.071428571428571,
+		"loc_x": 9.049999999999999,
+		"loc_y": 8.599999999999998,
 		"dist": 1,
-		"duration": 3
+		"duration": 2
 	},
 	{
 		"id_plan": 14,
 		"step_time": 14,
 		"id_guard": 1,
 		"time_elapsed": 14,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 9.087499999999999,
-		"loc_y": 8.0625,
+		"loc_x": 8.399999999999999,
+		"loc_y": 7.799999999999998,
 		"dist": 1,
-		"duration": 0
+		"duration": 3
 	},
 	{
 		"id_plan": 15,
 		"step_time": 15,
 		"id_guard": 1,
 		"time_elapsed": 15,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 9.360714285714284,
-		"loc_y": 9.053571428571429,
+		"loc_x": 7.749999999999999,
+		"loc_y": 6.999999999999998,
 		"dist": 1,
-		"duration": 1
+		"duration": 4
 	},
 	{
 		"id_plan": 16,
 		"step_time": 16,
 		"id_guard": 1,
 		"time_elapsed": 16,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 9.63392857142857,
-		"loc_y": 10.044642857142858,
+		"loc_x": 7.1,
+		"loc_y": 6.199999999999998,
 		"dist": 1,
-		"duration": 2
+		"duration": 5
 	},
 	{
 		"id_plan": 17,
 		"step_time": 17,
 		"id_guard": 1,
 		"time_elapsed": 17,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 9.907142857142855,
-		"loc_y": 11.035714285714286,
+		"loc_x": 6.449999999999999,
+		"loc_y": 5.399999999999999,
 		"dist": 1,
-		"duration": 3
+		"duration": 6
 	},
 	{
 		"id_plan": 18,
 		"step_time": 18,
 		"id_guard": 1,
 		"time_elapsed": 18,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 10.18035714285714,
-		"loc_y": 12.026785714285715,
+		"loc_x": 5.8,
+		"loc_y": 4.599999999999999,
 		"dist": 1,
-		"duration": 4
+		"duration": 7
 	},
 	{
 		"id_plan": 19,
 		"step_time": 19,
 		"id_guard": 1,
 		"time_elapsed": 19,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 10.453571428571427,
-		"loc_y": 13.017857142857144,
+		"loc_x": 5.15,
+		"loc_y": 3.7999999999999994,
 		"dist": 1,
-		"duration": 5
+		"duration": 8
 	},
 	{
 		"id_plan": 20,
 		"step_time": 20,
 		"id_guard": 1,
 		"time_elapsed": 20,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 10.726785714285715,
-		"loc_y": 14.008928571428573,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 1,
-		"duration": 6
+		"duration": 9
 	},
 	{
 		"id_plan": 21,
 		"step_time": 21,
 		"id_guard": 1,
 		"time_elapsed": 21,
-		"id_task": 2,
-		"type_status": 1,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 1,
-		"duration": 7
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 4.5,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 1
 	},
 	{
 		"id_plan": 22,
 		"step_time": 22,
 		"id_guard": 1,
 		"time_elapsed": 22,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 1
+		"duration": 2
 	},
 	{
 		"id_plan": 23,
 		"step_time": 23,
 		"id_guard": 1,
 		"time_elapsed": 23,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 2
+		"duration": 3
 	},
 	{
 		"id_plan": 24,
 		"step_time": 24,
 		"id_guard": 1,
 		"time_elapsed": 24,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 3
+		"duration": 4
 	},
 	{
 		"id_plan": 25,
 		"step_time": 25,
 		"id_guard": 1,
 		"time_elapsed": 25,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 4
+		"duration": 5
 	},
 	{
 		"id_plan": 26,
 		"step_time": 26,
 		"id_guard": 1,
 		"time_elapsed": 26,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
+		"loc_x": 4.5,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 5
+		"duration": 6
 	},
 	{
 		"id_plan": 27,
 		"step_time": 27,
 		"id_guard": 1,
 		"time_elapsed": 27,
-		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 6
-	},
-	{
-		"id_plan": 28,
-		"step_time": 28,
-		"id_guard": 1,
-		"time_elapsed": 28,
-		"id_task": 2,
-		"type_status": 2,
-		"loc_x": 11,
-		"loc_y": 15,
-		"dist": 0,
-		"duration": 7
-	},
-	{
-		"id_plan": 29,
-		"step_time": 29,
-		"id_guard": 1,
-		"time_elapsed": 29,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 10.5,
-		"loc_y": 14.076923076923077,
-		"dist": 1,
-		"duration": 0
-	},
-	{
-		"id_plan": 30,
-		"step_time": 30,
-		"id_guard": 1,
-		"time_elapsed": 30,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 10,
-		"loc_y": 13.153846153846153,
-		"dist": 1,
-		"duration": 1
-	},
-	{
-		"id_plan": 31,
-		"step_time": 31,
-		"id_guard": 1,
-		"time_elapsed": 31,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 9.5,
-		"loc_y": 12.23076923076923,
-		"dist": 1,
-		"duration": 2
-	},
-	{
-		"id_plan": 32,
-		"step_time": 32,
-		"id_guard": 1,
-		"time_elapsed": 32,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 9,
-		"loc_y": 11.307692307692307,
-		"dist": 1,
-		"duration": 3
-	},
-	{
-		"id_plan": 33,
-		"step_time": 33,
-		"id_guard": 1,
-		"time_elapsed": 33,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 8.5,
-		"loc_y": 10.384615384615383,
-		"dist": 1,
-		"duration": 4
-	},
-	{
-		"id_plan": 34,
-		"step_time": 34,
-		"id_guard": 1,
-		"time_elapsed": 34,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 8,
-		"loc_y": 9.46153846153846,
-		"dist": 1,
-		"duration": 5
-	},
-	{
-		"id_plan": 35,
-		"step_time": 35,
-		"id_guard": 1,
-		"time_elapsed": 35,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 7.5,
-		"loc_y": 8.538461538461537,
-		"dist": 1,
-		"duration": 6
-	},
-	{
-		"id_plan": 36,
-		"step_time": 36,
-		"id_guard": 1,
-		"time_elapsed": 36,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 7,
-		"loc_y": 7.615384615384614,
-		"dist": 1,
-		"duration": 7
-	},
-	{
-		"id_plan": 37,
-		"step_time": 37,
-		"id_guard": 1,
-		"time_elapsed": 37,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 6.5,
-		"loc_y": 6.692307692307692,
-		"dist": 1,
-		"duration": 8
-	},
-	{
-		"id_plan": 38,
-		"step_time": 38,
-		"id_guard": 1,
-		"time_elapsed": 38,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 6,
-		"loc_y": 5.769230769230768,
-		"dist": 1,
-		"duration": 9
-	},
-	{
-		"id_plan": 39,
-		"step_time": 39,
-		"id_guard": 1,
-		"time_elapsed": 39,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 5.5,
-		"loc_y": 4.846153846153846,
-		"dist": 1,
-		"duration": 10
-	},
-	{
-		"id_plan": 40,
-		"step_time": 40,
-		"id_guard": 1,
-		"time_elapsed": 40,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 5,
-		"loc_y": 3.923076923076923,
-		"dist": 1,
-		"duration": 11
-	},
-	{
-		"id_plan": 41,
-		"step_time": 41,
-		"id_guard": 1,
-		"time_elapsed": 41,
-		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 1,
-		"duration": 12
-	},
-	{
-		"id_plan": 42,
-		"step_time": 42,
-		"id_guard": 1,
-		"time_elapsed": 42,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 1
-	},
-	{
-		"id_plan": 43,
-		"step_time": 43,
-		"id_guard": 1,
-		"time_elapsed": 43,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 2
-	},
-	{
-		"id_plan": 44,
-		"step_time": 44,
-		"id_guard": 1,
-		"time_elapsed": 44,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 3
-	},
-	{
-		"id_plan": 45,
-		"step_time": 45,
-		"id_guard": 1,
-		"time_elapsed": 45,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 4
-	},
-	{
-		"id_plan": 46,
-		"step_time": 46,
-		"id_guard": 1,
-		"time_elapsed": 46,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 5
-	},
-	{
-		"id_plan": 47,
-		"step_time": 47,
-		"id_guard": 1,
-		"time_elapsed": 47,
-		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 4.5,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 6
-	},
-	{
-		"id_plan": 48,
-		"step_time": 48,
-		"id_guard": 1,
-		"time_elapsed": 48,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 4.884615384615385,
@@ -588,10 +336,10 @@
 		"duration": 0
 	},
 	{
-		"id_plan": 49,
-		"step_time": 49,
+		"id_plan": 28,
+		"step_time": 28,
 		"id_guard": 1,
-		"time_elapsed": 49,
+		"time_elapsed": 28,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 5.26923076923077,
@@ -600,10 +348,10 @@
 		"duration": 1
 	},
 	{
-		"id_plan": 50,
-		"step_time": 50,
+		"id_plan": 29,
+		"step_time": 29,
 		"id_guard": 1,
-		"time_elapsed": 50,
+		"time_elapsed": 29,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 5.653846153846154,
@@ -612,10 +360,10 @@
 		"duration": 2
 	},
 	{
-		"id_plan": 51,
-		"step_time": 51,
+		"id_plan": 30,
+		"step_time": 30,
 		"id_guard": 1,
-		"time_elapsed": 51,
+		"time_elapsed": 30,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 6.038461538461538,
@@ -624,10 +372,10 @@
 		"duration": 3
 	},
 	{
-		"id_plan": 52,
-		"step_time": 52,
+		"id_plan": 31,
+		"step_time": 31,
 		"id_guard": 1,
-		"time_elapsed": 52,
+		"time_elapsed": 31,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 6.423076923076923,
@@ -636,10 +384,10 @@
 		"duration": 4
 	},
 	{
-		"id_plan": 53,
-		"step_time": 53,
+		"id_plan": 32,
+		"step_time": 32,
 		"id_guard": 1,
-		"time_elapsed": 53,
+		"time_elapsed": 32,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 6.807692307692308,
@@ -648,10 +396,10 @@
 		"duration": 5
 	},
 	{
-		"id_plan": 54,
-		"step_time": 54,
+		"id_plan": 33,
+		"step_time": 33,
 		"id_guard": 1,
-		"time_elapsed": 54,
+		"time_elapsed": 33,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 7.1923076923076925,
@@ -660,10 +408,10 @@
 		"duration": 6
 	},
 	{
-		"id_plan": 55,
-		"step_time": 55,
+		"id_plan": 34,
+		"step_time": 34,
 		"id_guard": 1,
-		"time_elapsed": 55,
+		"time_elapsed": 34,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 7.576923076923077,
@@ -672,10 +420,10 @@
 		"duration": 7
 	},
 	{
-		"id_plan": 56,
-		"step_time": 56,
+		"id_plan": 35,
+		"step_time": 35,
 		"id_guard": 1,
-		"time_elapsed": 56,
+		"time_elapsed": 35,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 7.961538461538462,
@@ -684,10 +432,10 @@
 		"duration": 8
 	},
 	{
-		"id_plan": 57,
-		"step_time": 57,
+		"id_plan": 36,
+		"step_time": 36,
 		"id_guard": 1,
-		"time_elapsed": 57,
+		"time_elapsed": 36,
 		"id_task": 1,
 		"type_status": 1,
 		"loc_x": 8.346153846153847,
@@ -696,28 +444,280 @@
 		"duration": 9
 	},
 	{
+		"id_plan": 37,
+		"step_time": 37,
+		"id_guard": 1,
+		"time_elapsed": 37,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 8.730769230769232,
+		"loc_y": 13.323076923076924,
+		"dist": 1,
+		"duration": 10
+	},
+	{
+		"id_plan": 38,
+		"step_time": 38,
+		"id_guard": 1,
+		"time_elapsed": 38,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 9.115384615384617,
+		"loc_y": 14.26153846153846,
+		"dist": 1,
+		"duration": 11
+	},
+	{
+		"id_plan": 39,
+		"step_time": 39,
+		"id_guard": 1,
+		"time_elapsed": 39,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 1,
+		"duration": 12
+	},
+	{
+		"id_plan": 40,
+		"step_time": 40,
+		"id_guard": 1,
+		"time_elapsed": 40,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 0,
+		"duration": 1
+	},
+	{
+		"id_plan": 41,
+		"step_time": 41,
+		"id_guard": 1,
+		"time_elapsed": 41,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 0,
+		"duration": 2
+	},
+	{
+		"id_plan": 42,
+		"step_time": 42,
+		"id_guard": 1,
+		"time_elapsed": 42,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 0,
+		"duration": 3
+	},
+	{
+		"id_plan": 43,
+		"step_time": 43,
+		"id_guard": 1,
+		"time_elapsed": 43,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 0,
+		"duration": 4
+	},
+	{
+		"id_plan": 44,
+		"step_time": 44,
+		"id_guard": 1,
+		"time_elapsed": 44,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 9.5,
+		"loc_y": 15.2,
+		"dist": 0,
+		"duration": 5
+	},
+	{
+		"id_plan": 45,
+		"step_time": 45,
+		"id_guard": 1,
+		"time_elapsed": 45,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 8.1,
+		"loc_y": 15.399999999999999,
+		"dist": 1,
+		"duration": 0
+	},
+	{
+		"id_plan": 46,
+		"step_time": 46,
+		"id_guard": 1,
+		"time_elapsed": 46,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 6.7,
+		"loc_y": 15.6,
+		"dist": 1,
+		"duration": 1
+	},
+	{
+		"id_plan": 47,
+		"step_time": 47,
+		"id_guard": 1,
+		"time_elapsed": 47,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 6.7,
+		"loc_y": 15.6,
+		"dist": 0,
+		"duration": 1
+	},
+	{
+		"id_plan": 48,
+		"step_time": 48,
+		"id_guard": 1,
+		"time_elapsed": 48,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 6.7,
+		"loc_y": 15.6,
+		"dist": 0,
+		"duration": 2
+	},
+	{
+		"id_plan": 49,
+		"step_time": 49,
+		"id_guard": 1,
+		"time_elapsed": 49,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 6.7,
+		"loc_y": 15.6,
+		"dist": 0,
+		"duration": 3
+	},
+	{
+		"id_plan": 50,
+		"step_time": 50,
+		"id_guard": 1,
+		"time_elapsed": 50,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 6.7,
+		"loc_y": 15.6,
+		"dist": 0,
+		"duration": 4
+	},
+	{
+		"id_plan": 51,
+		"step_time": 51,
+		"id_guard": 1,
+		"time_elapsed": 51,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 6.338461538461539,
+		"loc_y": 14.63076923076923,
+		"dist": 1,
+		"duration": 0
+	},
+	{
+		"id_plan": 52,
+		"step_time": 52,
+		"id_guard": 1,
+		"time_elapsed": 52,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 5.976923076923077,
+		"loc_y": 13.661538461538461,
+		"dist": 1,
+		"duration": 1
+	},
+	{
+		"id_plan": 53,
+		"step_time": 53,
+		"id_guard": 1,
+		"time_elapsed": 53,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 5.615384615384616,
+		"loc_y": 12.692307692307692,
+		"dist": 1,
+		"duration": 2
+	},
+	{
+		"id_plan": 54,
+		"step_time": 54,
+		"id_guard": 1,
+		"time_elapsed": 54,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 5.253846153846155,
+		"loc_y": 11.723076923076922,
+		"dist": 1,
+		"duration": 3
+	},
+	{
+		"id_plan": 55,
+		"step_time": 55,
+		"id_guard": 1,
+		"time_elapsed": 55,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 4.892307692307693,
+		"loc_y": 10.753846153846153,
+		"dist": 1,
+		"duration": 4
+	},
+	{
+		"id_plan": 56,
+		"step_time": 56,
+		"id_guard": 1,
+		"time_elapsed": 56,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 4.530769230769231,
+		"loc_y": 9.784615384615384,
+		"dist": 1,
+		"duration": 5
+	},
+	{
+		"id_plan": 57,
+		"step_time": 57,
+		"id_guard": 1,
+		"time_elapsed": 57,
+		"id_task": 1,
+		"type_status": 1,
+		"loc_x": 4.1692307692307695,
+		"loc_y": 8.815384615384614,
+		"dist": 1,
+		"duration": 6
+	},
+	{
 		"id_plan": 58,
 		"step_time": 58,
 		"id_guard": 1,
 		"time_elapsed": 58,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 7.173076923076923,
-		"loc_y": 12.442307692307693,
+		"loc_x": 3.807692307692308,
+		"loc_y": 7.846153846153845,
 		"dist": 1,
-		"duration": 0
+		"duration": 7
 	},
 	{
 		"id_plan": 59,
 		"step_time": 59,
 		"id_guard": 1,
 		"time_elapsed": 59,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 6,
-		"loc_y": 12.5,
+		"loc_x": 3.4461538461538463,
+		"loc_y": 6.876923076923076,
 		"dist": 1,
-		"duration": 1
+		"duration": 8
 	},
 	{
 		"id_plan": 60,
@@ -726,10 +726,10 @@
 		"time_elapsed": 60,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.708333333333333,
-		"loc_y": 11.541666666666666,
+		"loc_x": 3.0846153846153848,
+		"loc_y": 5.907692307692306,
 		"dist": 1,
-		"duration": 0
+		"duration": 9
 	},
 	{
 		"id_plan": 61,
@@ -738,10 +738,10 @@
 		"time_elapsed": 61,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.416666666666666,
-		"loc_y": 10.583333333333332,
+		"loc_x": 2.723076923076923,
+		"loc_y": 4.938461538461538,
 		"dist": 1,
-		"duration": 1
+		"duration": 10
 	},
 	{
 		"id_plan": 62,
@@ -750,10 +750,10 @@
 		"time_elapsed": 62,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 5.124999999999999,
-		"loc_y": 9.624999999999998,
+		"loc_x": 2.3615384615384616,
+		"loc_y": 3.969230769230769,
 		"dist": 1,
-		"duration": 2
+		"duration": 11
 	},
 	{
 		"id_plan": 63,
@@ -762,10 +762,10 @@
 		"time_elapsed": 63,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 4.833333333333332,
-		"loc_y": 8.666666666666664,
+		"loc_x": 2,
+		"loc_y": 3,
 		"dist": 1,
-		"duration": 3
+		"duration": 12
 	},
 	{
 		"id_plan": 64,
@@ -773,11 +773,11 @@
 		"id_guard": 1,
 		"time_elapsed": 64,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 4.541666666666666,
-		"loc_y": 7.708333333333331,
-		"dist": 1,
-		"duration": 4
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 1
 	},
 	{
 		"id_plan": 65,
@@ -785,11 +785,11 @@
 		"id_guard": 1,
 		"time_elapsed": 65,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 4.249999999999999,
-		"loc_y": 6.749999999999998,
-		"dist": 1,
-		"duration": 5
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 2
 	},
 	{
 		"id_plan": 66,
@@ -797,11 +797,11 @@
 		"id_guard": 1,
 		"time_elapsed": 66,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 3.9583333333333326,
-		"loc_y": 5.791666666666665,
-		"dist": 1,
-		"duration": 6
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 3
 	},
 	{
 		"id_plan": 67,
@@ -809,11 +809,11 @@
 		"id_guard": 1,
 		"time_elapsed": 67,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 3.666666666666666,
-		"loc_y": 4.833333333333332,
-		"dist": 1,
-		"duration": 7
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 4
 	},
 	{
 		"id_plan": 68,
@@ -821,11 +821,11 @@
 		"id_guard": 1,
 		"time_elapsed": 68,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 3.3749999999999996,
-		"loc_y": 3.874999999999999,
-		"dist": 1,
-		"duration": 8
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 5
 	},
 	{
 		"id_plan": 69,
@@ -833,11 +833,11 @@
 		"id_guard": 1,
 		"time_elapsed": 69,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 3.083333333333333,
-		"loc_y": 2.916666666666666,
-		"dist": 1,
-		"duration": 9
+		"type_status": 2,
+		"loc_x": 2,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 6
 	},
 	{
 		"id_plan": 70,
@@ -846,10 +846,10 @@
 		"time_elapsed": 70,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 2.7916666666666665,
-		"loc_y": 1.958333333333333,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 1,
-		"duration": 10
+		"duration": 0
 	},
 	{
 		"id_plan": 71,
@@ -857,11 +857,11 @@
 		"id_guard": 1,
 		"time_elapsed": 71,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 2.5,
-		"loc_y": 1,
-		"dist": 1,
-		"duration": 11
+		"type_status": 2,
+		"loc_x": 3,
+		"loc_y": 3,
+		"dist": 0,
+		"duration": 1
 	},
 	{
 		"id_plan": 72,
@@ -870,10 +870,10 @@
 		"time_elapsed": 72,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2.5,
-		"loc_y": 1,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 1
+		"duration": 2
 	},
 	{
 		"id_plan": 73,
@@ -882,10 +882,10 @@
 		"time_elapsed": 73,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2.5,
-		"loc_y": 1,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 2
+		"duration": 3
 	},
 	{
 		"id_plan": 74,
@@ -894,10 +894,10 @@
 		"time_elapsed": 74,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2.5,
-		"loc_y": 1,
+		"loc_x": 3,
+		"loc_y": 3,
 		"dist": 0,
-		"duration": 3
+		"duration": 4
 	},
 	{
 		"id_plan": 75,
@@ -905,11 +905,11 @@
 		"id_guard": 1,
 		"time_elapsed": 75,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 2.5,
-		"loc_y": 1,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 2.75,
+		"loc_y": 2,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 76,
@@ -918,10 +918,10 @@
 		"time_elapsed": 76,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 2.25,
-		"loc_y": 2,
+		"loc_x": 2.5,
+		"loc_y": 1,
 		"dist": 1,
-		"duration": 0
+		"duration": 1
 	},
 	{
 		"id_plan": 77,
@@ -929,10 +929,10 @@
 		"id_guard": 1,
 		"time_elapsed": 77,
 		"id_task": 1,
-		"type_status": 1,
-		"loc_x": 2,
-		"loc_y": 3,
-		"dist": 1,
+		"type_status": 2,
+		"loc_x": 2.5,
+		"loc_y": 1,
+		"dist": 0,
 		"duration": 1
 	},
 	{
@@ -942,10 +942,10 @@
 		"time_elapsed": 78,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
+		"loc_x": 2.5,
+		"loc_y": 1,
 		"dist": 0,
-		"duration": 1
+		"duration": 2
 	},
 	{
 		"id_plan": 79,
@@ -954,10 +954,10 @@
 		"time_elapsed": 79,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
+		"loc_x": 2.5,
+		"loc_y": 1,
 		"dist": 0,
-		"duration": 2
+		"duration": 3
 	},
 	{
 		"id_plan": 80,
@@ -966,10 +966,10 @@
 		"time_elapsed": 80,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
+		"loc_x": 2.5,
+		"loc_y": 1,
 		"dist": 0,
-		"duration": 3
+		"duration": 4
 	},
 	{
 		"id_plan": 81,
@@ -977,11 +977,11 @@
 		"id_guard": 1,
 		"time_elapsed": 81,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 4
+		"type_status": 1,
+		"loc_x": 2.6363636363636362,
+		"loc_y": 2.0454545454545454,
+		"dist": 1,
+		"duration": 0
 	},
 	{
 		"id_plan": 82,
@@ -989,11 +989,11 @@
 		"id_guard": 1,
 		"time_elapsed": 82,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 5
+		"type_status": 1,
+		"loc_x": 2.7727272727272725,
+		"loc_y": 3.090909090909091,
+		"dist": 1,
+		"duration": 1
 	},
 	{
 		"id_plan": 83,
@@ -1001,11 +1001,11 @@
 		"id_guard": 1,
 		"time_elapsed": 83,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 2,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 6
+		"type_status": 1,
+		"loc_x": 2.9090909090909087,
+		"loc_y": 4.136363636363637,
+		"dist": 1,
+		"duration": 2
 	},
 	{
 		"id_plan": 84,
@@ -1014,10 +1014,10 @@
 		"time_elapsed": 84,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 3,
-		"loc_y": 3,
+		"loc_x": 3.045454545454545,
+		"loc_y": 5.181818181818182,
 		"dist": 1,
-		"duration": 0
+		"duration": 3
 	},
 	{
 		"id_plan": 85,
@@ -1025,11 +1025,11 @@
 		"id_guard": 1,
 		"time_elapsed": 85,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 3.181818181818181,
+		"loc_y": 6.227272727272727,
+		"dist": 1,
+		"duration": 4
 	},
 	{
 		"id_plan": 86,
@@ -1037,11 +1037,11 @@
 		"id_guard": 1,
 		"time_elapsed": 86,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 3.3181818181818175,
+		"loc_y": 7.2727272727272725,
+		"dist": 1,
+		"duration": 5
 	},
 	{
 		"id_plan": 87,
@@ -1049,23 +1049,23 @@
 		"id_guard": 1,
 		"time_elapsed": 87,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 3
+		"type_status": 1,
+		"loc_x": 3.454545454545454,
+		"loc_y": 8.318181818181818,
+		"dist": 1,
+		"duration": 6
 	},
 	{
 		"id_plan": 88,
 		"step_time": 88,
 		"id_guard": 1,
 		"time_elapsed": 88,
-		"id_task": 2,
+		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 2,
-		"loc_y": 3,
+		"loc_x": 3.590909090909091,
+		"loc_y": 9.363636363636363,
 		"dist": 1,
-		"duration": 0
+		"duration": 7
 	},
 	{
 		"id_plan": 89,
@@ -1074,10 +1074,10 @@
 		"time_elapsed": 89,
 		"id_task": 1,
 		"type_status": 1,
-		"loc_x": 3,
-		"loc_y": 3,
+		"loc_x": 3.727272727272727,
+		"loc_y": 10.409090909090908,
 		"dist": 1,
-		"duration": 0
+		"duration": 8
 	},
 	{
 		"id_plan": 90,
@@ -1085,11 +1085,11 @@
 		"id_guard": 1,
 		"time_elapsed": 90,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 1
+		"type_status": 1,
+		"loc_x": 3.8636363636363633,
+		"loc_y": 11.454545454545453,
+		"dist": 1,
+		"duration": 9
 	},
 	{
 		"id_plan": 91,
@@ -1097,11 +1097,11 @@
 		"id_guard": 1,
 		"time_elapsed": 91,
 		"id_task": 1,
-		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
-		"dist": 0,
-		"duration": 2
+		"type_status": 1,
+		"loc_x": 4,
+		"loc_y": 12.5,
+		"dist": 1,
+		"duration": 10
 	},
 	{
 		"id_plan": 92,
@@ -1110,10 +1110,10 @@
 		"time_elapsed": 92,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
+		"loc_x": 4,
+		"loc_y": 12.5,
 		"dist": 0,
-		"duration": 3
+		"duration": 1
 	},
 	{
 		"id_plan": 93,
@@ -1122,8 +1122,32 @@
 		"time_elapsed": 93,
 		"id_task": 1,
 		"type_status": 2,
-		"loc_x": 3,
-		"loc_y": 3,
+		"loc_x": 4,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 2
+	},
+	{
+		"id_plan": 94,
+		"step_time": 94,
+		"id_guard": 1,
+		"time_elapsed": 94,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 4,
+		"loc_y": 12.5,
+		"dist": 0,
+		"duration": 3
+	},
+	{
+		"id_plan": 95,
+		"step_time": 95,
+		"id_guard": 1,
+		"time_elapsed": 95,
+		"id_task": 1,
+		"type_status": 2,
+		"loc_x": 4,
+		"loc_y": 12.5,
 		"dist": 0,
 		"duration": 4
 	}

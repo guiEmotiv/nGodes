@@ -67,7 +67,7 @@ func GetTotalEvent(a OrdinaryTask) (eventsTotal []NewFormatTasks){
 
 			for _, v := range StoreTasks {
 				eventsTotal = append(eventsTotal, v)
-				fmt.Println("StoreTask: ",StoreTasks)
+				fmt.Println("EMERGENCY TASK GENERATED: ",StoreTasks)
 			}
 			//fmt.Println(StoreTasks)
 			//fmt.Printf("#RegularTasks: %d | newIdTasks: %d | newIdSite: %d | releasing: %g | duration: %g | importance: %g \n",
