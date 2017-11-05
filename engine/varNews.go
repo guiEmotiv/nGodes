@@ -1,9 +1,9 @@
 package engine
 
 type GetPlan struct {
-	StepTime	float64		`json:"step_time"`
-	IdGuard		int 		`json:"id_guard"`
-	StepPos
+		StepTime float64 `json:"step_time"`
+		IdGuard  int     `json:"id_guard"`
+		StepPos
 }
 
 type StepPos struct {

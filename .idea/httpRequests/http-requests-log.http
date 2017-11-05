@@ -1,0 +1,174 @@
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050613.200.json
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050608.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050607-3.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050607-2.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050607-1.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050607.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050606.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050603.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T050602.404.txt
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/clent
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080/client
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+GET http://localhost:8080
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T043310.200.json
+
+###
+
+GET http://localhost:8080
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T043307.200.json
+
+###
+
+GET http://localhost:8080
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2017-11-03T043137.200.json
+
+###
+

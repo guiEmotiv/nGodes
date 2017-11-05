@@ -50,24 +50,25 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 			delete(mapAllIdTask,0)
 			// append last values
 
+
 			StorePlan["Time Elapsed"] = GetPlan{
-				0,
-				1,
-				StepPos{
-					0,
 					0,
 					1,
-					aPosX,
-					aPosY,
-					0,
-					0,
-					Coverage{
-						standardRadius,
+					StepPos{
 						0,
-						"nil",
-						"nil",
+						0,
+						1,
+						aPosX,
+						aPosY,
+						0,
+						0,
+						Coverage{
+							standardRadius,
+							0,
+							"nil",
+							"nil",
+						},
 					},
-				},
 			}
 
 			for _, v := range StorePlan {
@@ -563,9 +564,12 @@ func scoreGlobal(s []float64) (scoreTotal float64){
 	return
 }
 
+
+
 func GetJsonClock(s []GetPlan) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
-	err := ioutil.WriteFile("./json/ClockEvents.json", jsonFile, 0777)
+	//jsonFile, _ := json.Marshal(s)
+	err := ioutil.WriteFile("./json/clockEvents.json", jsonFile, 0777)
 	if err != nil {
 		fmt.Println("error when create JSON file")
 	}

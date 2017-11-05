@@ -6,6 +6,7 @@ import (
 	"gopkg.in/fogleman/gg.v1"
 	"strconv"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func main(){
@@ -14,18 +15,16 @@ func main(){
 	// make emergency tasks
 	a := g.GetTotalEvent(instances)
 
-	//fmt.Println(a)
-
 	q, r := g.GetNews(a)
 	fmt.Println("BEST ACUMULADO",r)
+	fmt.Println(q)
+
 	g.GetJsonClock(q)
-			//
 			d := gg.NewContext(600,600)
 
 			for i := 0;i<len(a); i++ {
 				d.DrawString(strconv.Itoa(a[i].NewIdSite),a[i].LocX*35+5,a[i].LocY*35+5)
 				//d.DrawString(strconv.FormatFloat(a[i].LocX, 'f', 6, 64),a[i].LocX*20-20,a[i].LocY*20-20)
-
 				d.DrawCircle(a[i].LocX*35,a[i].LocY*35,1)
 				d.SetRGB(255, 255, 0)
 				d.Stroke()
@@ -58,18 +57,19 @@ func main(){
 	/******** Discrete Event Simulation Models in Go  *********/
 
 	e := gin.Default()
-	e.GET("/", func(c *gin.Context) {
-		c.JSON(200, q )})
+
+	e.GET("/totalEvent", func(c *gin.Context) {
+		c.JSON(http.StatusOK, q)})
+
 	e.LoadHTMLGlob("public/*")
 	e.Static("/src","./src")
-	e.GET("/index", func(c *gin.Context) {
-		c.HTML(200,"index.html",gin.H{
+	e.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK,"index.html",gin.H{
 
 		})
 	})
 	// engine.GET("/create-algorithm")
 	e.Run() // listen and serve on 0.0.0.0:8080
-
 	/******** Discrete Event Simulation Models in Go  *********/
 
 }
