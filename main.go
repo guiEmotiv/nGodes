@@ -61,6 +61,9 @@ func main(){
 	e.GET("/totalEvent", func(c *gin.Context) {
 		c.JSON(http.StatusOK, q)})
 
+	e.GET("/client", func(c *gin.Context) {
+		c.JSON(http.StatusOK, instances)})
+
 	e.LoadHTMLGlob("public/*")
 	e.Static("/src","./src")
 	e.GET("/", func(c *gin.Context) {
@@ -70,6 +73,7 @@ func main(){
 	})
 	// engine.GET("/create-algorithm")
 	e.Run() // listen and serve on 0.0.0.0:8080
+
 	/******** Discrete Event Simulation Models in Go  *********/
 
 }

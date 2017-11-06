@@ -58,9 +58,9 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 						0,
 						0,
 						1,
+						0,
 						aPosX,
 						aPosY,
-						0,
 						0,
 						Coverage{
 							standardRadius,
