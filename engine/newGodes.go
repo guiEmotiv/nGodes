@@ -50,7 +50,6 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 			delete(mapAllIdTask,0)
 			// append last values
 
-
 			StorePlan["Time Elapsed"] = GetPlan{
 					0,
 					1,
@@ -232,6 +231,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA float64) {
 	fmt.Println("---------------------- END SIMULADOR DE EVENTOS DISCRETOS ----------------------")
 	return
 }
+
 func feasibleIDs()  {
 	var storeIdOrdNew = make([]int,len(sliceAllIdTask))
 	var bestWeightNew [1]int
@@ -359,13 +359,19 @@ func nextPosition(x1, y1 float64 , et float64) (bestPos int) {
 }
 
 func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos []StepPos) {
+
 	idTask := 1
 	typeTravelOrd := 1
 	typeWaitingOrd := 2
 	typeOperationOrd := 3
+
 	arrDist := distance(x1,y1,x2,y2)
+
 	fmt.Printf("---ORDINARY TASK (LAST POSITION X:%g Y:%g): \n", x1, y1)
 	fmt.Println("ORDINARY TASK ARRIVAL TIME: ", arrDist)
+
+	fmt.Println("aqui estoy",arrDist)
+
 	for i := 0.0; i <= arrDist; i++ {
 		var newX2, newY2 float64
 		arrDist := distance(x1,y1,x2,y2)
@@ -434,6 +440,7 @@ func runOrdinaryTask(x1, y1 float64, x2, y2 float64, et float64, a int) (newPos 
 			}
 		}
 	}
+
 	lastPostStoreX := x2
 	lastPostStoreY := y2
 	lastElapsedTime := StorePos["travelOrd"].TimeElapsed
@@ -564,8 +571,6 @@ func scoreGlobal(s []float64) (scoreTotal float64){
 	return
 }
 
-
-
 func GetJsonClock(s []GetPlan) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
 	//jsonFile, _ := json.Marshal(s)
@@ -582,9 +587,9 @@ func matrixCoverage(x2, y2 float64, et float64, cov float64) (covFeasibleIDs flo
 		delete(mapAllIdTask,idPlanTaskEmer[i])
 	}
 
-	virtualTimeStep = 1
-	startVirtualTimeL1 = 0.001
-	survivalProbability = math.Exp(-(meanRateAlarmsperShift) * (0.9) / virtualTimeShift)
+	//virtualTimeStep = 1
+	//startVirtualTimeL1 = 0.001
+	//survivalProbability = math.Exp(-(meanRateAlarmsperShift) * 1.0)
 
 	var sliceMatrix = make([]int,len(sliceAllIdTask))
 	var sliceMatrixCoverage = make([]int,len(sliceAllIdTask))
@@ -598,7 +603,7 @@ func matrixCoverage(x2, y2 float64, et float64, cov float64) (covFeasibleIDs flo
 		if k == 0 { continue }
 
 		siteRelFreq = mapAllIdTask[v].Frequency
-		probAlarmDeltaSite = 1 - math.Exp(-meanRateAlarmsperShift * siteRelFreq * virtualTimeStep / virtualTimeShift)
+		probAlarmDeltaSite = 1 - math.Exp(-meanRateAlarmsperShift * siteRelFreq * 1.0)
 
 		xCoveredSiteCoordinate = mapAllIdTask[v].LocX
 		yCoveredSiteCoordinate = mapAllIdTask[v].LocY
@@ -618,9 +623,9 @@ func matrixCoverage(x2, y2 float64, et float64, cov float64) (covFeasibleIDs flo
 		}else {
 			sliceMatrix[k] = 0
 		}
-		probNoAlarm = math.Exp(-meanRateAlarmsperShift * (0.9))
+		probNoAlarm = math.Exp(-meanRateAlarmsperShift * (et-0.0001))
 
-		sliceMatrixFeasible[k] = float64(sliceMatrix[k]) * probAlarmDeltaSite * probNoAlarm * mapAllIdTask[v].NewImportance
+		sliceMatrixFeasible[k] = float64(sliceMatrix[k]) * probAlarmDeltaSite * probNoAlarm
 	}
 	for k, v := range sliceMatrixFeasible {
 		if v == 0 { continue }
@@ -629,7 +634,7 @@ func matrixCoverage(x2, y2 float64, et float64, cov float64) (covFeasibleIDs flo
 	}
 	covFeasibleIDs = accumulatedCoverageSite
 	//fmt.Println(covFeasibleIDs)
-	//fmt.Println(sliceMatrixFeasible)
+	fmt.Println(sliceMatrixFeasible)
 	fmt.Println(sliceMatrixCoverage)
 	fmt.Println(sliceMatrix)
 	covDetails = arrayToString(sliceMatrixCoverage,", ")
@@ -643,4 +648,5 @@ func arrayToString(a []int, delim string) string {
 	//return strings.Trim(strings.Join(strings.Fields(fmt.Sprint(a)), delim), "[]")
 
 }
+
 

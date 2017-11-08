@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"gopkg.in/fogleman/gg.v1"
 	"strconv"
+	"math"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -21,6 +22,7 @@ func main(){
 
 	g.GetJsonClock(q)
 			d := gg.NewContext(600,600)
+			d.SetRGB(255, 255, 255)
 
 			for i := 0;i<len(a); i++ {
 				d.DrawString(strconv.Itoa(a[i].NewIdSite),a[i].LocX*35+5,a[i].LocY*35+5)
@@ -32,12 +34,12 @@ func main(){
 			}
 
 			for i := 0; i < len(q)-1; i++ {
-				d.DrawCircle(q[35].LocX*35,q[35].LocY*35,q[35].Coverage.Score*35)
+				//d.DrawCircle(q[35].LocX*35,q[35].LocY*35,q[35].Coverage.Score*35)
 				d.Stroke()
 				d.SetRGB(100, 10, 100)
 				d.Fill()
 				d.SetRGB(100, 1, 1)
-				d.DrawCircle(q[0].StepPos.LocX*35,q[0].StepPos.LocY*35,2)
+				//d.DrawCircle(q[0].StepPos.LocX*35,q[0].StepPos.LocY*35,2)
 				d.Fill()
 				d.DrawString("BASE: (6, 9.5)",q[0].StepPos.LocX*35+5,q[0].StepPos.LocY*35)
 
@@ -54,6 +56,7 @@ func main(){
 
 			d.SavePNG("./img/newpos.png")
 
+	fmt.Println("ctm: ", math.Exp(1))
 	/******** Discrete Event Simulation Models in Go  *********/
 
 	e := gin.Default()
@@ -62,7 +65,7 @@ func main(){
 		c.JSON(http.StatusOK, q)})
 
 	e.GET("/client", func(c *gin.Context) {
-		c.JSON(http.StatusOK, instances)})
+		c.JSON(http.StatusOK, a)})
 
 	e.LoadHTMLGlob("public/*")
 	e.Static("/src","./src")

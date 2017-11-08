@@ -4,4 +4,8 @@
 #npm run dev
 
 cd ./
-go run main.go
+go build main.go
+./main
+
+
+
