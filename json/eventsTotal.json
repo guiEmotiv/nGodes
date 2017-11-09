@@ -170,15 +170,28 @@
 	},
 	{
 		"NewIdTask": 13,
-		"NewIdSite": 8,
-		"NewReleasing": 56.61755274941185,
-		"NewEarliest": 56.61755274941185,
-		"NewLatest": 64.11755274941186,
+		"NewIdSite": 2,
+		"NewReleasing": 60.9454135193542,
+		"NewEarliest": 60.9454135193542,
+		"NewLatest": 68.44541351935419,
 		"NewDuration": 7.5,
 		"NewImportance": 100,
 		"NewTaskType": 0,
-		"LocX": 2,
-		"LocY": 3,
+		"LocX": 6,
+		"LocY": 12.5,
+		"Frequency": 0
+	},
+	{
+		"NewIdTask": 14,
+		"NewIdSite": 5,
+		"NewReleasing": 90.7326734824899,
+		"NewEarliest": 90.7326734824899,
+		"NewLatest": 98.2326734824899,
+		"NewDuration": 7.5,
+		"NewImportance": 100,
+		"NewTaskType": 0,
+		"LocX": 9.5,
+		"LocY": 15.2,
 		"Frequency": 0
 	}
 ]

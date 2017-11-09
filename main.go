@@ -2,23 +2,26 @@ package main
 
 import (
 	g "github.com/guiemotiv/nGodes/engine"
-	"fmt"
 	"gopkg.in/fogleman/gg.v1"
 	"strconv"
-	"math"
-	"github.com/gin-gonic/gin"
-	"net/http"
+	"fmt"
 )
 
 func main(){
 
 	instances := g.GetOrdinaryTask("./json/ordinarytask.json")
+
 	// make emergency tasks
 	a := g.GetTotalEvent(instances)
+	g.GetJson(a)
 
-	q, r := g.GetNews(a)
-	fmt.Println("BEST ACUMULADO",r)
-	fmt.Println(q)
+	q, _, _ := g.GetNews(a)
+	//fmt.Println("acumulado by best weight",r)
+	//fmt.Println("acumulado by weight",w)
+	//fmt.Println(q)
+	fmt.Println("=====================================")
+
+
 
 	g.GetJsonClock(q)
 			d := gg.NewContext(600,600)
@@ -34,7 +37,7 @@ func main(){
 			}
 
 			for i := 0; i < len(q)-1; i++ {
-				//d.DrawCircle(q[35].LocX*35,q[35].LocY*35,q[35].Coverage.Score*35)
+				d.DrawCircle(q[22].LocX*35,q[22].LocY*35,q[22].Coverage.Score*35)
 				d.Stroke()
 				d.SetRGB(100, 10, 100)
 				d.Fill()
@@ -56,30 +59,31 @@ func main(){
 
 			d.SavePNG("./img/newpos.png")
 
-	fmt.Println("ctm: ", math.Exp(1))
 	/******** Discrete Event Simulation Models in Go  *********/
 
-	e := gin.Default()
-
-	e.GET("/totalEvent", func(c *gin.Context) {
-		c.JSON(http.StatusOK, q)})
-
-	e.GET("/client", func(c *gin.Context) {
-		c.JSON(http.StatusOK, a)})
-
-	e.LoadHTMLGlob("public/*")
-	e.Static("/src","./src")
-	e.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK,"index.html",gin.H{
-
-		})
-	})
-	// engine.GET("/create-algorithm")
-	e.Run() // listen and serve on 0.0.0.0:8080
+	//e := gin.Default()
+	//
+	//e.GET("/totalEvent", func(c *gin.Context) {
+	//	c.JSON(http.StatusOK, q)})
+	//
+	//e.GET("/client", func(c *gin.Context) {
+	//	c.JSON(http.StatusOK, a)})
+	//
+	//e.LoadHTMLGlob("public/*")
+	//e.Static("/src","./src")
+	//e.GET("/", func(c *gin.Context) {
+	//	c.HTML(http.StatusOK,"index.html",gin.H{
+	//
+	//	})
+	//})
+	//// engine.GET("/create-algorithm")
+	//e.Run() // listen and serve on 0.0.0.0:8080
 
 	/******** Discrete Event Simulation Models in Go  *********/
+
+
+
 
 }
-
 
 
