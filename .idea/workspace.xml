@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d38f69c7-5fdb-421f-a3e9-3bd0584cba67" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/test/main.go" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/engine/newGodes.go" afterPath="$PROJECT_DIR$/engine/newGodes.go" />
       <change beforePath="$PROJECT_DIR$/engine/varNews.go" afterPath="$PROJECT_DIR$/engine/varNews.go" />
       <change beforePath="$PROJECT_DIR$/img/newpos.png" afterPath="$PROJECT_DIR$/img/newpos.png" />
-      <change beforePath="$PROJECT_DIR$/json/.RData" afterPath="$PROJECT_DIR$/json/.RData" />
-      <change beforePath="$PROJECT_DIR$/json/.Rhistory" afterPath="$PROJECT_DIR$/json/.Rhistory" />
       <change beforePath="$PROJECT_DIR$/json/ClockEvents.json" afterPath="$PROJECT_DIR$/json/ClockEvents.json" />
       <change beforePath="$PROJECT_DIR$/json/eventsTotal.json" afterPath="$PROJECT_DIR$/json/eventsTotal.json" />
       <change beforePath="$PROJECT_DIR$/main" afterPath="$PROJECT_DIR$/main" />
       <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
+      <change beforePath="$PROJECT_DIR$/runbitch.sh" afterPath="$PROJECT_DIR$/runbitch.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,14 +25,14 @@
     <favorites_list name="nGodes" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61328125">
+    <splitter split-orientation="horizontal" split-proportion="0.60859376">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+                <state relative-caret-position="447">
+                  <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
                   <folding>
                     <element signature="e#14#109#0" expanded="true" />
                   </folding>
@@ -43,18 +43,61 @@
           <file leaf-file-name="newGodes.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/engine/newGodes.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="305">
-                  <caret line="326" column="54" lean-forward="false" selection-start-line="326" selection-start-column="54" selection-end-line="326" selection-end-column="54" />
+                <state relative-caret-position="724">
+                  <caret line="608" column="0" lean-forward="true" selection-start-line="608" selection-start-column="0" selection-end-line="608" selection-end-column="0" />
                   <folding>
+                    <element signature="e#16#90#0" expanded="true" />
                     <element signature="n#!!block;n#feasibleIDs#0" expanded="false" />
+                    <element signature="n#!!block;n#nextPosition#0" expanded="false" />
                     <element signature="n#!!block;n#runOrdinaryTask#0" expanded="false" />
                     <element signature="n#!!block;n#runEmergencyTask#0" expanded="false" />
                     <element signature="n#!!block;n#distance#0" expanded="false" />
                     <element signature="n#!!block;n#scoreGlobal#0" expanded="false" />
                     <element signature="n#!!block;n#GetJsonClock#0" expanded="false" />
+                    <element signature="n#!!block;n#GetJsonClock2#0" expanded="false" />
                     <element signature="n#!!block;n#matrixCoverage#0" expanded="false" />
                     <element signature="n#!!block;n#arrayToString#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="clockEvents1.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/json/clockEvents1.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="clockEvents2.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/json/clockEvents2.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/main.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="runbitch.sh" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/runbitch.sh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="6" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -69,8 +112,8 @@
           <file leaf-file-name="clockEvents.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/json/clockEvents.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24735">
-                  <caret line="1649" column="1" lean-forward="false" selection-start-line="1649" selection-start-column="1" selection-end-line="1649" selection-end-column="1" />
+                <state relative-caret-position="-21213">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -79,10 +122,10 @@
           <file leaf-file-name="eventsTotal.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/json/eventsTotal.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2220">
+                <state relative-caret-position="702">
                   <caret line="148" column="26" lean-forward="false" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
                   <folding>
-                    <marker date="1510243762000" expanded="true" signature="2891:3411" ph="{&quot;NewIdTask&quot;: 13...}" />
+                    <marker date="1510500478000" expanded="true" signature="2668:3153" ph="{&quot;NewIdTask&quot;: 12...}" />
                   </folding>
                 </state>
               </provider>
@@ -95,15 +138,14 @@
           <file leaf-file-name="varNews.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/engine/varNews.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+                <state relative-caret-position="465">
+                  <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="17" />
                   <folding>
-                    <element signature="e#29#124#0" expanded="false" />
-                    <element signature="e#139#408#0" expanded="false" />
-                    <element signature="e#424#654#0" expanded="false" />
+                    <element signature="e#281#550#0" expanded="false" />
+                    <element signature="e#566#796#0" expanded="false" />
                     <element signature="n#!!block;n#Swap#0" expanded="false" />
                     <element signature="n#!!block;n#Less#0" expanded="false" />
-                    <element signature="e#1025#1043#0" expanded="false" />
+                    <element signature="e#1167#1185#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -116,17 +158,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var</find>
-      <find>Guard</find>
       <find>bestPosition</find>
       <find>base</find>
       <find>last</find>
@@ -155,6 +195,8 @@
       <find>t</find>
       <find>sumScore</find>
       <find>scoreGlobal</find>
+      <find>v</find>
+      <find>mapAllIdTask</find>
     </findStrings>
     <replaceStrings>
       <replace>aprTimeShift</replace>
@@ -189,10 +231,11 @@
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/runbitch.sh" />
         <option value="$PROJECT_DIR$/src/p5js.js" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/engine/varNews.go" />
+        <option value="$PROJECT_DIR$/test/main.go" />
+        <option value="$PROJECT_DIR$/runbitch.sh" />
+        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/engine/newGodes.go" />
       </list>
     </option>
@@ -240,7 +283,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,17 +293,13 @@
             <path>
               <item name="nGodes" type="b2602c69:ProjectViewProjectNode" />
               <item name="nGodes" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nGodes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nGodes" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -414,14 +452,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13671875" sideWeight="0.4882698" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20859376" sideWeight="0.4882698" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862645" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.18870346" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" x="80" y="203" width="1120" height="393" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.18870346" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" x="608" y="231" width="781" height="391" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32734275" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21229868" sideWeight="0.5117302" order="2" side_tool="true" content_ui="tabs" />
@@ -470,42 +507,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/engine/varEvent.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/getEvent.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runbitch.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -646,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runbitch.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/client.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -683,25 +682,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="119" column="64" lean-forward="false" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/varNews.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="17" />
+          <folding>
+            <element signature="e#281#550#0" expanded="false" />
+            <element signature="e#566#796#0" expanded="false" />
+            <element signature="n#!!block;n#Swap#0" expanded="false" />
+            <element signature="n#!!block;n#Less#0" expanded="false" />
+            <element signature="e#1167#1185#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/json/eventsTotal.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
+        <state relative-caret-position="702">
           <caret line="148" column="26" lean-forward="false" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
           <folding>
-            <marker date="1510243762000" expanded="true" signature="2891:3411" ph="{&quot;NewIdTask&quot;: 13...}" />
+            <marker date="1510500478000" expanded="true" signature="2668:3153" ph="{&quot;NewIdTask&quot;: 12...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/clockEvents.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24735">
-          <caret line="1649" column="1" lean-forward="false" selection-start-line="1649" selection-start-column="1" selection-end-line="1649" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,42 +722,70 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/24">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/clockEvents.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21213">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runbitch.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/clockEvents1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/clockEvents2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="447">
+          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
             <element signature="e#14#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/varNews.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-          <folding>
-            <element signature="e#29#124#0" expanded="false" />
-            <element signature="e#139#408#0" expanded="false" />
-            <element signature="e#424#654#0" expanded="false" />
-            <element signature="n#!!block;n#Swap#0" expanded="false" />
-            <element signature="n#!!block;n#Less#0" expanded="false" />
-            <element signature="e#1025#1043#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/engine/newGodes.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="326" column="54" lean-forward="false" selection-start-line="326" selection-start-column="54" selection-end-line="326" selection-end-column="54" />
+        <state relative-caret-position="724">
+          <caret line="608" column="0" lean-forward="true" selection-start-line="608" selection-start-column="0" selection-end-line="608" selection-end-column="0" />
           <folding>
+            <element signature="e#16#90#0" expanded="true" />
             <element signature="n#!!block;n#feasibleIDs#0" expanded="false" />
+            <element signature="n#!!block;n#nextPosition#0" expanded="false" />
             <element signature="n#!!block;n#runOrdinaryTask#0" expanded="false" />
             <element signature="n#!!block;n#runEmergencyTask#0" expanded="false" />
             <element signature="n#!!block;n#distance#0" expanded="false" />
             <element signature="n#!!block;n#scoreGlobal#0" expanded="false" />
             <element signature="n#!!block;n#GetJsonClock#0" expanded="false" />
+            <element signature="n#!!block;n#GetJsonClock2#0" expanded="false" />
             <element signature="n#!!block;n#matrixCoverage#0" expanded="false" />
             <element signature="n#!!block;n#arrayToString#0" expanded="false" />
           </folding>

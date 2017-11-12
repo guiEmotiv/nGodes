@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
+func GetNews(v []NewFormatTasks, guard int) (test []GetPlan, PA, PA1 float64) {
 	fmt.Println("---------------------- START SIMULADOR DE EVENTOS DISCRETOS ----------------------")
 	// ARRAY scores total
 	lenAllTaskIDs = len(v)
@@ -25,7 +25,10 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 	// IDs task ordinary && task Emergency
 	for k, v := range sliceAllIdTask {
 		//fmt.Println(" ",sliceAllIdTask[k].NewEarliest)
-		if v.NewTaskType == 1 { idPlanTaskOrd = append(idPlanTaskOrd,k) }else { idPlanTaskEmer = append(idPlanTaskEmer,k)}
+		if v.NewTaskType == 1 { idPlanTaskOrd = append(idPlanTaskOrd,k)
+		}else if v.NewTaskType == 0 && v.NewImportance == 100 {
+			idPlanTaskEmer = append(idPlanTaskEmer,k)
+			}
 	}
 
 	fmt.Println("ORDINARY TASK IDs: ", idPlanTaskOrd, " -  EMERGENCY TASK IDs: ", idPlanTaskEmer)
@@ -42,7 +45,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 
 		if mapAllIdTask[0].NewTaskType == 1 {
 			/* init values */
- 			stepTime = elapsedTime
+			stepTime = elapsedTime
 			virtualStartTime = mapAllIdTask[0].NewEarliest
 			aPosX = mapAllIdTask[0].LocX
 			aPosY = mapAllIdTask[0].LocY
@@ -55,24 +58,24 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 			// append last values
 
 			StorePlan["Time Elapsed"] = GetPlan{
+				0,
+				guard,
+				StepPos{
+					0,
 					0,
 					1,
-					StepPos{
+					0,
+					aPosX,
+					aPosY,
+					0,
+					Coverage{
+						standardRadius,
 						0,
 						0,
-						1,
-						0,
-						aPosX,
-						aPosY,
-						0,
-						Coverage{
-							standardRadius,
-							0,
-							0,
-							"nil",
-							"nil",
-						},
+						"nil",
+						"nil",
 					},
+				},
 			}
 
 			for _, v := range StorePlan {
@@ -88,7 +91,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 						nPosX = mapAllIdTask[a].LocX
 						nPosY = mapAllIdTask[a].LocY
 						fmt.Printf("NEXT POSITION By BEST WEIGHT X:%g Y:%g \n", nPosX,nPosY)
-						fmt.Println("Informacion Next Point: ", mapAllIdTask[idPlanTaskOrd[a]])
+						fmt.Println("Informacion Next Point: ", mapAllIdTask[a])
 						fmt.Printf("\n")
 						fmt.Println("****** REMEMBER RELEASE ALARM TIME: ", float64(int64(StoreEmergency[bestEmergency[0]].NewEarliest)))
 						fmt.Println("---------- INICIO DE ORDINARY ------------")
@@ -111,7 +114,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 
 							StorePlan["Time Elapsed"] = GetPlan{
 								q[i].TimeElapsed,
-								1,
+								guard,
 								StepPos{
 									q[i].IdTask,
 									q[i].TypeStatus,
@@ -185,7 +188,7 @@ func GetNews(v []NewFormatTasks) (test []GetPlan, PA, PA1 float64) {
 
 								StorePlan["Time Elapsed"] = GetPlan{
 									e[i].TimeElapsed,
-									1,
+									guard,
 									StepPos{
 										e[i].IdTask,
 										e[i].TypeStatus,
@@ -597,11 +600,21 @@ func scoreGlobal(s []float64) (scoreTotal float64){
 func GetJsonClock(s []GetPlan) {
 	jsonFile, _ := json.MarshalIndent(s, "","\t")
 	//jsonFile, _ := json.Marshal(s)
-	err := ioutil.WriteFile("./json/clockEvents.json", jsonFile, 0777)
+	err := ioutil.WriteFile("./json/clockEvents1.json", jsonFile, 0777)
 	if err != nil {
 		fmt.Println("error when create JSON file")
 	}
-	fmt.Println("JSON FILE CREATED /json/ClockEvent.json")
+	fmt.Println("JSON FILE CREATED /json/ClockEvent1.json")
+}
+
+func GetJsonClock2(s []GetPlan) {
+	jsonFile, _ := json.MarshalIndent(s, "","\t")
+	//jsonFile, _ := json.Marshal(s)
+	err := ioutil.WriteFile("./json/clockEvents2.json", jsonFile, 0777)
+	if err != nil {
+		fmt.Println("error when create JSON file")
+	}
+	fmt.Println("JSON FILE CREATED /json/ClockEvent2.json")
 }
 
 func matrixCoverage(x2, y2 float64, et float64, cov float64) (covFeasibleIDs, sumCovFeaIDs float64, covDetails, covDetailsMatrix string) {
@@ -691,5 +704,3 @@ func arrayToString(a []int, delim string) string {
 	//return strings.Trim(strings.Join(strings.Fields(fmt.Sprint(a)), delim), "[]")
 
 }
-
-

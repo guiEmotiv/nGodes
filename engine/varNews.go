@@ -1,5 +1,11 @@
 package engine
 
+
+var test []GetPlan
+var test2 []GetPlan
+var sumScore = make([]float64,lenAllTaskIDs+30)
+var weightByScore = make([]float64,lenAllTaskIDs+30)
+
 type GetPlan struct {
 		StepTime float64 `json:"step_time"`
 		IdGuard  int     `json:"id_guard"`
@@ -51,8 +57,6 @@ func (a sortByWeight) Less(i, j int) bool {
 var sliceAllIdTask = make([]NewFormatTasks,lenAllTaskIDs)
 var mapAllIdTask = map[int]NewFormatTasks{}
 var StoreEmergency = make(map[int]NewFormatTasks)
-var sumScore = make([]float64,lenAllTaskIDs+30)
-var weightByScore = make([]float64,lenAllTaskIDs+30)
 var idPlanTaskOrd []int
 var idPlanTaskEmer []int
 
